@@ -1,31 +1,78 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <!-- Use UTF-8 encoding on the page -->
-        <meta charset="UTF-8">
-        <title>МойМаркет</title>
-    </head>
-    <body>
-        <!-- HEADER -->
-        <header>
-            <h1>МойМаркет</h1>
-        </header>
-        <!-- NAV -->
-        <nav>
-            <a href="#">Электроника</a> &gt;
-            <a href="#">Смартфоны и гаджеты</a> &gt; 
-            <a href="#">Мобильные телефоны</a> &gt;
-            <a href="#">Apple</a>
+<head>
+    <!-- Use UTF-8 encoding on the page -->
+    <meta charset="UTF-8">
+    <title>МойМаркет</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="top">
+        <!-- Logo -->
+        <h1 class="logo">
+            <span style="color: #ff5522;">Мой</span>Маркет
+        </h1>
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs">
+            <a href="/">Электроника</a>
+            &gt;
+            <a href="/">Смартфоны и гаджеты</a>
+            &gt;
+            <a href="/">Мобильные телефоны</a>
+            &gt;
+            <a href="/">Apple</a>
         </nav>
-        <!-- MAIN -->
-        <main>
-            <h2>Смартфон Apple iPhone 13</h2>
-            <h3>Цена <s>75 990₽</s> 67 990₽</h3>
+    </header>
+    <!-- MAIN -->
+    <main class="product">
+        <!-- Product gallery -->
+        <div class="product__gallery">
+            <img src="./img/image-1.webp" height="400px" alt="iPhone 13 - вид спереди и сзади">
+            <img src="./img/image-2.webp" height="400px" alt="iPhone 13 - вид спереди">
+            <img src="./img/image-3.webp" height="400px" alt="iPhone 13 - вид спереди и сзади, повернут боком">
+            <img src="./img/image-4.webp" height="400px" alt="Камера iPhone 13">
+            <img src="./img/image-5.webp" height="400px" alt="iPhone 13 - вид сзади и спереди">
+        </div>
+        <!-- Product name -->
+        <h2 class="product__name">Смартфон Apple iPhone 13</h2>
+        <!-- Product price -->
+        <h3 class="product__price">Цена <s>75 990₽</s> 67 990₽</h3>
+        <!-- Product order -->
+        <div class="product__order">
             <button>Добавить в корзину</button>
-            <!-- Characteristics -->
-            <section>
+            <button>В избранное</button>
+        </div>
+        <!-- Properties -->
+        <section class="product__properties">
+            <!-- Color property -->
+            <div class="product__property property">
+                <h3>
+                    Цвет товара: <span class="property__value">Синий</span>
+                </h3>
+                <div class="property__options">
+                    <img src="./img/color-1.webp" height="100px" alt="Красный iPhone 13">
+                    <img src="./img/color-2.webp" height="100px" alt="Зелёный iPhone 13">
+                    <img src="./img/color-3.webp" height="100px" alt="Розовый iPhone 13">
+                    <img src="./img/color-4.webp" height="100px" alt="Бирюзовый iPhone 13">
+                    <img src="./img/color-5.webp" height="100px" alt="Синий iPhone 13">
+                    <img src="./img/color-6.webp" height="100px" alt="Чёрный iPhone 13">
+                </div>
+            </div>
+            <!-- RAM property -->
+            <div class="product__property property">
+                <h3>
+                    Конфигурация памяти: <span class="property__value">128 ГБ</span>
+                </h3>
+                <div class="property__options">
+                    <button>128 ГБ</button>
+                    <button>256 ГБ</button>
+                    <button>512 ГБ</button>
+                </div>
+            </div>
+            <!-- Characteristics property -->
+            <div class="product__property property">
                 <h3>Характеристики товара</h3>
-                <ul>
+                <ul class="property__list">
                     <li>Экран: <b>6.1</b></li>
                     <li>Встроенная память: <b>128 ГБ</b></li>
                     <li>Операционная система: <b>iOS 15</b></li>
@@ -33,42 +80,76 @@
                     <li>Процессор: <b><a href="https://ru.wikipedia.org/wiki/Apple_A15" target="_blank">Apple A15 Bionic</a></b></li>
                     <li>Вес: <b>173 г</b></li>
                 </ul>
-            </section>
-            <!-- Description -->
-            <section>
-                <h3>Описание</h3>
-                <p>
-                    Наша самая совершенная система двух камер.<br>
-                    Особый взгляд на прочность дисплея.<br>
-                    Чип, с которым всё супербыстро.<br>
-                    Аккумулятор держится заметно дольше.<br>
-                    <i>iPhone 13 - сильный мира всего.</i>
-                </p>
-                <p>Мы разработали совершенно новую схему расположения и развернули объективы на 45 градусов. Благодаря этому внутри корпуса поместилась наша лучшая система двух камер с увеличенной матрицей широкоугольной камеры. Кроме того, мы освободили место для системы оптической стабилизации изображения сдвигом матрицы. И повысили скорость работы матрицы на сверхширокоугольной камере.</p>
-                <p>Новая сверхширокоугольная камера видит больше деталей в тёмных областяхснимков. Новая широкоугольная камера улавливает на 47% больше света для более качественных фотографий и видео. Новая оптическая стабилизация со сдвигом матрицы обеспечит чёткие кадры даже в неустойчивом положении.</p>
-                <p>Режим «Киноэффект» автоматически добавляет великолепные эффекты перемещения фокуса и изменения резкости. Просто начните запись видео. Режим «Киноэффект» будет удерживать фокус на объекте съёмки, создавая красивый эффект размытия вокруг него. Режим «Киноэффект» распознаёт, когда нужно перевести фокус на другого человека или объект, который появился в кадре. Теперь ваши видео будут смотреться как настоящее кино.</p>
-            </section>
-            <!-- Testimonials -->
-            <section>
-                <h3>Отзывы</h3>
-                <div>
+            </div>
+        </section>
+        <!-- Description -->
+        <section class="product__description">
+            <h3>Описание</h3>
+            <p>
+                Наша самая совершенная система двух камер.<br>
+                Особый взгляд на прочность дисплея.<br>
+                Чип, с которым всё супербыстро.<br>
+                Аккумулятор держится заметно дольше.<br>
+                <i>iPhone 13 - сильный мира всего.</i>
+            </p>
+            <p>Мы разработали совершенно новую схему расположения и развернули объективы на 45 градусов. Благодаря этому внутри корпуса поместилась наша лучшая система двух камер с увеличенной матрицей широкоугольной камеры. Кроме того, мы освободили место для системы оптической стабилизации изображения сдвигом матрицы. И повысили скорость работы матрицы на сверхширокоугольной камере.</p>
+            <p>Новая сверхширокоугольная камера видит больше деталей в тёмных областяхснимков. Новая широкоугольная камера улавливает на 47% больше света для более качественных фотографий и видео. Новая оптическая стабилизация со сдвигом матрицы обеспечит чёткие кадры даже в неустойчивом положении.</p>
+            <p>Режим «Киноэффект» автоматически добавляет великолепные эффекты перемещения фокуса и изменения резкости. Просто начните запись видео. Режим «Киноэффект» будет удерживать фокус на объекте съёмки, создавая красивый эффект размытия вокруг него. Режим «Киноэффект» распознаёт, когда нужно перевести фокус на другого человека или объект, который появился в кадре. Теперь ваши видео будут смотреться как настоящее кино.</p>
+        </section>
+        <!-- Reviews -->
+        <section class="product__reviews">
+            <h3>Отзывы</h3>
+            <!-- Review -->
+            <div class="product__review review">
+                <!-- Review owner -->
+                <div class="review__owner">
+                    <img src="./img/review-1.jpeg" height="200px" alt="Фото рецензента">
                     <h4>Марк Г.</h4>
+                </div>
+                <!-- Review score -->
+                <img
+                    class="review__score"
+                    src="./img/star-5.png"
+                    height="30px"
+                    alt="Оценка 5 звёзд"
+                >
+                <!-- Review items -->
+                <div class="review__items">
                     <p><b>Опыт использования:</b> менее месяца</p>
                     <p><b>Достоинства:</b><br> это мой первый айфон после после огромного количества телефонов на андроиде. всё плавно, чётко и красиво. довольно шустрое устройство. камера весьма неплохая, ширик тоже на высоте.</p>
                     <p><b>Недостатки:</b><br> к самому устройству мало имеет отношение, но перенос данных с андроида - адская вещь) а если нужно переносить фото с компа, то это только через itunes, который урезает качество фотографий исходное</p>
                 </div>
-                <hr>
-                <div>
+            </div>
+            <hr>
+            <!-- Review -->
+            <div class="product__review review">
+                <!-- Review owner -->
+                <div class="review__owner">
+                    <img src="./img/review-2.jpeg" height="200px" alt="Фото рецензента">
                     <h4>Валерий Коваленко</h4>
+                </div>
+                <!-- Review score -->
+                <img
+                    class="review__score"
+                    src="./img/star-4.png"
+                    height="30px"
+                    alt="Оценка 5 звёзд"
+                >
+                <!-- Review items -->
+                <div class="review__items">
                     <p><b>Опыт использования:</b> менее месяца</p>
                     <p><b>Достоинства:</b><br> OLED экран, Дизайн, Система камер, Шустрый А15, Заряд держит долго</p>
                     <p><b>Недостатки:</b><br> Плохая ремонтопригодность</p>
                 </div>
-            </section>
-        </main>
-        <!-- FOOTER -->
-        <footer>
-            <p>&copy; ООО «МойМаркет», 2018-2022.</p>
-        </footer>
-    </body>
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            &copy; ООО «<span style="color: #ff5522;">Мой</span>Маркет», 2018-2022. Для уточнения информации звоните по номеру <a href="tel:79000000000">+7 900 000 0000</a>, а предложения по сотрудничеству отправляйте на почту <a href="mailto:partner@mymarket.com">partner@mymarket.com</a>
+        </p>
+        <a class="top-btn" href="#top">Наверх</a>
+    </footer>
+</body>
 </html>
