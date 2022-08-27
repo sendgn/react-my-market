@@ -1,0 +1,92 @@
+/* Components */
+.btn {
+    padding: 0.3rem 1rem;
+    background: #ff5522;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+}
+.btn:hover {
+    background: #f5673c;
+}
+
+.iframe {
+    border: 1px solid #ddd;
+    height: 400px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.75rem;
+}
+
+.logo__title {
+    margin: 0;
+    line-height: 0.75;
+}
+
+/* Header */
+.header__logo {
+    margin: 1rem 0;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    display: flex;
+    margin-bottom: 1rem;
+}
+.breadcrumbs__item::after {
+    content: '>';
+    padding: 0 0.5rem;
+}
+.breadcrumbs__item:last-child::after {
+    content: '';
+}
+
+/* Grid container*/
+.grid {
+    display: grid;
+}
+
+/* Comparison chart */
+.comparison-chart {
+    grid-template-rows: 1fr;
+}
+
+.comparison-chart__row {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+.comparison-chart__row_header {
+    font-weight: bold;
+}
+
+.comparison-chart__col {
+    padding: 5px 10px;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+.comparison-chart__col:first-child {
+    border-left: none;
+}
+
+.comparison-chart__row:last-child .comparison-chart__col {
+    border-bottom: none;
+}
+
+/* Reviews */
+.reviews__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.reviews__count {
+    color: #aaa;
+}
+
+/* Utilities */
+.colored {
+    color: #ff5522;
+}
