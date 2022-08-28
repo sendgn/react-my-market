@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
-    <link rel="icon" href="./favicon.ico" sizes="any">
-    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <link rel="icon" href="../../static/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="../../static/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../../static/favicon/apple-touch-icon.png">
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../../static/css/main.css">
 </head>
-<body>
+<body class="container">
     <!-- The top of the page -->
     <div id="top" />
     <!-- HEADER -->
     <header class="header">
         <!-- Logo -->
         <div class="header__logo logo">
-            <img class="logo__img" src="./favicon.svg" alt="Логотип">
+            <img class="logo__img" src="../../static/favicon/favicon.svg" alt="Логотип">
             <h1 class="logo__title"><span class="colored">Мой</span>Маркет</h1>
         </div>
         <!-- Breadcrumbs -->
@@ -35,12 +35,13 @@
     <main class="product">
         <!-- Product gallery -->
         <section class="product__gallery gallery">
-            <img class="gallery__item" src="./img/image-1.webp" height="400" alt="iPhone 13 - вид спереди и сзади">
-            <img class="gallery__item" src="./img/image-2.webp" height="400" alt="iPhone 13 - вид спереди">
-            <img class="gallery__item" src="./img/image-3.webp" height="400" alt="iPhone 13 - вид спереди и сзади, повернут боком">
-            <img class="gallery__item" src="./img/image-4.webp" height="400" alt="Камера iPhone 13">
-            <img class="gallery__item" src="./img/image-5.webp" height="400" alt="iPhone 13 - вид сзади и спереди">
+            <img class="gallery__item" src="../../static/media/img/image-1.webp" height="400" alt="iPhone 13 - вид спереди и сзади">
+            <img class="gallery__item" src="../../static/media/img/image-2.webp" height="400" alt="iPhone 13 - вид спереди">
+            <img class="gallery__item" src="../../static/media/img/image-3.webp" height="400" alt="iPhone 13 - вид спереди и сзади, повернут боком">
+            <img class="gallery__item" src="../../static/media/img/image-4.webp" height="400" alt="Камера iPhone 13">
+            <img class="gallery__item" src="../../static/media/img/image-5.webp" height="400" alt="iPhone 13 - вид сзади и спереди">
         </section>
+        <!-- Product basic info -->
         <section class="product__basic-info">
             <!-- Product name -->
             <h2 class="product__name">Смартфон Apple iPhone 13</h2>
@@ -60,12 +61,12 @@
                     Цвет товара: <span class="property__value">Синий</span>
                 </h3>
                 <div class="property__options">
-                    <img class="property__option" src="./img/color-1.webp" height="100" alt="Красный iPhone 13">
-                    <img class="property__option" src="./img/color-2.webp" height="100" alt="Зелёный iPhone 13">
-                    <img class="property__option" src="./img/color-3.webp" height="100" alt="Розовый iPhone 13">
-                    <img class="property__option" src="./img/color-4.webp" height="100" alt="Бирюзовый iPhone 13">
-                    <img class="property__option" src="./img/color-5.webp" height="100" alt="Синий iPhone 13">
-                    <img class="property__option" src="./img/color-6.webp" height="100" alt="Чёрный iPhone 13">
+                    <img class="property__option" src="../../static/media/img/color-1.webp" height="100" alt="Красный iPhone 13">
+                    <img class="property__option" src="../../static/media/img/color-2.webp" height="100" alt="Зелёный iPhone 13">
+                    <img class="property__option" src="../../static/media/img/color-3.webp" height="100" alt="Розовый iPhone 13">
+                    <img class="property__option" src="../../static/media/img/color-4.webp" height="100" alt="Бирюзовый iPhone 13">
+                    <img class="property__option" src="../../static/media/img/color-5.webp" height="100" alt="Синий iPhone 13">
+                    <img class="property__option" src="../../static/media/img/color-6.webp" height="100" alt="Чёрный iPhone 13">
                 </div>
             </div>
             <!-- RAM property -->
@@ -169,6 +170,7 @@
         </section>
         <!-- Reviews -->
         <section class="product__reviews reviews">
+            <!-- Reviews header -->
             <div class="reviews__header">
                 <h3 class="reviews__title">Отзывы</h3>
                 <span class="reviews__count">425</span>
@@ -176,45 +178,47 @@
             </div>
             <!-- Review -->
             <div class="product__review reviews__item review">
-                <!-- Review owner -->
-                <div class="review__owner">
-                    <img class="review__img" src="./img/review-1.jpeg" height="200" alt="Фото рецензента">
+                <!-- Review image -->
+                <img class="review__img" src="../../static/media/img/review-1.jpeg" height="200" alt="Фото рецензента">
+                <!-- Review info -->
+                <div class="review__info">
                     <h4 class="review__name">Марк Г.</h4>
-                </div>
-                <!-- Review rating -->
-                <img
-                    class="review__rating"
-                    src="./img/star-5.png"
-                    height="30"
-                    alt="Оценка 5 звёзд"
-                >
-                <!-- Review details -->
-                <div class="review__details">
-                    <p class="review__detail"><b>Опыт использования:</b> менее месяца</p>
-                    <p class="review__detail"><b>Достоинства:</b><br> это мой первый айфон после после огромного количества телефонов на андроиде. всё плавно, чётко и красиво. довольно шустрое устройство. камера весьма неплохая, ширик тоже на высоте.</p>
-                    <p class="review__detail"><b>Недостатки:</b><br> к самому устройству мало имеет отношение, но перенос данных с андроида - адская вещь) а если нужно переносить фото с компа, то это только через itunes, который урезает качество фотографий исходное</p>
+                    <!-- Review rating -->
+                    <img
+                        class="review__rating"
+                        src="../../static/media/img/star-5.png"
+                        height="30"
+                        alt="Оценка 5 звёзд"
+                    >
+                    <!-- Review details -->
+                    <div class="review__details">
+                        <p class="review__detail"><b>Опыт использования:</b> менее месяца</p>
+                        <p class="review__detail"><b>Достоинства:</b><br> это мой первый айфон после после огромного количества телефонов на андроиде. всё плавно, чётко и красиво. довольно шустрое устройство. камера весьма неплохая, ширик тоже на высоте.</p>
+                        <p class="review__detail"><b>Недостатки:</b><br> к самому устройству мало имеет отношение, но перенос данных с андроида - адская вещь) а если нужно переносить фото с компа, то это только через itunes, который урезает качество фотографий исходное</p>
+                    </div>
                 </div>
             </div>
             <hr>
             <!-- Review -->
             <div class="product__review reviews__item review">
-                <!-- Review owner -->
-                <div class="review__owner">
-                    <img class="review__img" src="./img/review-2.jpeg" height="200" alt="Фото рецензента">
+                <!-- Review image -->
+                <img class="review__img" src="../../static/media/img/review-2.jpeg" height="200" alt="Фото рецензента">
+                <!-- Review info -->
+                <div class="review__info">
                     <h4 class="review__name">Валерий Коваленко</h4>
-                </div>
-                <!-- Review rating -->
-                <img
-                    class="review__rating"
-                    src="./img/star-4.png"
-                    height="30"
-                    alt="Оценка 4 звёзды"
-                >
-                <!-- Review details -->
-                <div class="review__details">
-                    <p class="review__detail"><b>Опыт использования:</b> менее месяца</p>
-                    <p class="review__detail"><b>Достоинства:</b><br> OLED экран, Дизайн, Система камер, Шустрый А15, Заряд держит долго</p>
-                    <p class="review__detail"><b>Недостатки:</b><br> Плохая ремонтопригодность</p>
+                    <!-- Review rating -->
+                    <img
+                        class="review__rating"
+                        src="../../static/media/img/star-4.png"
+                        height="30"
+                        alt="Оценка 4 звёзды"
+                    >
+                    <!-- Review details -->
+                    <div class="review__details">
+                        <p class="review__detail"><b>Опыт использования:</b> менее месяца</p>
+                        <p class="review__detail"><b>Достоинства:</b><br> OLED экран, Дизайн, Система камер, Шустрый А15, Заряд держит долго</p>
+                        <p class="review__detail"><b>Недостатки:</b><br> Плохая ремонтопригодность</p>
+                    </div>
                 </div>
             </div>
         </section>
