@@ -1,0 +1,6 @@
+.comparison-chart {
+    grid-template-rows: 1fr;
+}
+
+@import '__col/comparison-chart__col';
+@import '__row/comparison-chart__row';
