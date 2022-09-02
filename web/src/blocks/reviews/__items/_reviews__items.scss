@@ -1,0 +1,7 @@
+.reviews__items {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+@import '_direction/reviews__items_direction';

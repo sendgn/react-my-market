@@ -1,0 +1,5 @@
+.comparison-chart__row {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+@import '_header/comparison-chart__row_header';

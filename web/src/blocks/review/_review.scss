@@ -1,0 +1,11 @@
+.review {
+    display: flex;
+    column-gap: 16px;
+}
+
+@import '__img/review__img';
+@import '__info/review__info';
+@import '__name/review__name';
+@import '__rating/review__rating';
+@import '__details/review__details';
+@import '__detail/review__detail';
