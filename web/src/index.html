@@ -7,225 +7,136 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
-    <link rel="icon" href="../../static/favicon/favicon.ico" sizes="any">
-    <link rel="icon" href="../../static/favicon/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="../../static/favicon/apple-touch-icon.png">
+    <link rel="icon" href="../../static/media/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="../../static/media/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../../static/media/favicon/apple-touch-icon.png">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="../../static/css/main.css">
 </head>
-<body>
+<body class="font">
     <!-- The top of the page -->
     <div id="top"></div>
 
-    <div class="container font flex flex_col">
-        <!-- HEADER -->
-        <header class="header flex flex_col">
-            <!-- Logo -->
-            <div class="logo">
-                <img class="logo__img" src="../../static/favicon/favicon.svg" alt="Логотип" />
-                <h1 class="logo__title font_heading"><span class="colored">Мой</span>Маркет</h1>
-            </div>
-            <!-- Breadcrumbs -->
-            <nav class="breadcrumbs">
-                <div class="breadcrumbs__item"><a class="link" href="/">Электроника</a></div>
-                <div class="breadcrumbs__item"><a class="link" href="/">Смартфоны и гаджеты</a></div>
-                <div class="breadcrumbs__item"><a class="link" href="/">Мобильные телефоны</a></div>
-                <div class="breadcrumbs__item"><a class="link" href="/">Apple</a></div>
-            </nav>
-        </header>
-        <!-- MAIN -->
-        <main class="product flex flex_col">
-            <!-- Product gallery -->
-            <section class="product__gallery gallery">
-                <img class="gallery__item" src="../../static/media/img/image-1.webp" height="400" alt="iPhone 13 - вид спереди и сзади" />
-                <img class="gallery__item" src="../../static/media/img/image-2.webp" height="400" alt="iPhone 13 - вид спереди" />
-                <img class="gallery__item" src="../../static/media/img/image-3.webp" height="400" alt="iPhone 13 - вид спереди и сзади, повернут боком" />
-                <img class="gallery__item" src="../../static/media/img/image-4.webp" height="400" alt="Камера iPhone 13" />
-                <img class="gallery__item" src="../../static/media/img/image-5.webp" height="400" alt="iPhone 13 - вид сзади и спереди" />
-            </section>
-            <!-- Product basic info -->
-            <section class="product__basic-info flex flex_col">
+    <!-- HEADER -->
+    <header class="header container">
+        <div class="header__logo logo">
+            <img class="logo__img" src="../../static/media/img/logo.svg" alt="Логотип" />
+            <h1 class="logo__title font_heading font_heading_h1"><span class="colored">Мой</span>Маркет</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- BREADCRUMBS -->
+        <nav class="breadcrumbs">
+            <div class="breadcrumbs__item"><a class="link" href="/">Электроника</a></div>
+            <div class="breadcrumbs__item"><a class="link" href="/">Смартфоны и гаджеты</a></div>
+            <div class="breadcrumbs__item"><a class="link" href="/">Мобильные телефоны</a></div>
+            <div class="breadcrumbs__item"><a class="link" href="/">Apple</a></div>
+        </nav>
+        <!-- PRODUCT -->
+        <main class="product">
+            <div class="product__header">
                 <!-- Product name -->
-                <h2 class="product__name font_heading">Смартфон Apple iPhone 13</h2>
-                <!-- Product price -->
-                <h3 class="product__price font_heading">Цена <s>75 990₽</s> 67 990₽</h3>
-                <!-- Product order -->
-                <div class="product__order order">
-                    <div class="order__btn order__btn_cart btn">Добавить в корзину</div>
-                    <div class="order__btn order__btn_favorites btn">В избранное</div>
+                <h2 class="product__name font_heading font_heading_h2">Смартфон Apple iPhone 13, синий</h2>
+                <!-- Product gallery -->
+                <div class="product__gallery">
+                    <img src="../../static/media/img/image-1.webp" height="387" alt="iPhone 13 - вид спереди и сзади" />
+                    <img src="../../static/media/img/image-2.webp" height="387" alt="iPhone 13 - вид спереди" />
+                    <img src="../../static/media/img/image-3.webp" height="387" alt="iPhone 13 - вид спереди и сзади, повернут боком" />
+                    <img src="../../static/media/img/image-4.webp" height="387" alt="Камера iPhone 13" />
+                    <img src="../../static/media/img/image-5.webp" height="387" alt="iPhone 13 - вид сзади и спереди" />
                 </div>
-            </section>
-            <!-- Properties -->
-            <section class="product__properties flex flex_col">
-                <!-- Color property -->
-                <div class="product__property property">
-                    <h3 class="property__heading font_heading">
-                        Цвет товара: <span class="property__value">Синий</span>
-                    </h3>
-                    <div class="property__options">
-                        <img class="property__option" src="../../static/media/img/color-1.webp" height="100" alt="Красный iPhone 13" />
-                        <img class="property__option" src="../../static/media/img/color-2.webp" height="100" alt="Зелёный iPhone 13" />
-                        <img class="property__option" src="../../static/media/img/color-3.webp" height="100" alt="Розовый iPhone 13" />
-                        <img class="property__option" src="../../static/media/img/color-4.webp" height="100" alt="Бирюзовый iPhone 13" />
-                        <img class="property__option" src="../../static/media/img/color-5.webp" height="100" alt="Синий iPhone 13" />
-                        <img class="property__option" src="../../static/media/img/color-6.webp" height="100" alt="Чёрный iPhone 13" />
-                    </div>
-                </div>
-                <!-- RAM property -->
-                <div class="product__property property">
-                    <h3 class="property__heading font_heading">
-                        Конфигурация памяти: <span class="property__value">128 ГБ</span>
-                    </h3>
-                    <div class="property__options">
-                        <div class="property__option btn">128 ГБ</div>
-                        <div class="property__option btn">256 ГБ</div>
-                        <div class="property__option btn">512 ГБ</div>
-                    </div>
-                </div>
-                <!-- Characteristics property -->
-                <div class="product__property property">
-                    <h3 class="property__heading font_heading">Характеристики товара</h3>
-                    <ul class="property__list list">
-                        <li class="list__item">Экран: <b>6.1</b></li>
-                        <li class="list__item">Встроенная память: <b>128 ГБ</b></li>
-                        <li class="list__item">Операционная система: <b>iOS 15</b></li>
-                        <li class="list__item">Беспроводные интерфейсы: <b>NFC, Bluetooth, Wi-Fi</b></li>
-                        <li class="list__item">Процессор: <b><a class="link" href="https://ru.wikipedia.org/wiki/Apple_A15" target="_blank">Apple A15 Bionic</a></b></li>
-                        <li class="list__item">Вес: <b>173 г</b></li>
-                    </ul>
-                </div>
-            </section>
-            <!-- Advertisement -->
-            <section class="ads">
-                <iframe class="iframe" src="./ads.html">
-                    <p class="iframe__placeholder">Произошла ошибка при загрузке контента.</p>
-                </iframe>
-                <iframe class="iframe" src="./ads.html">
-                    <p class="iframe__placeholder">Произошла ошибка при загрузке контента.</p>
-                </iframe>
-            </section>
-            <!-- Description -->
-            <section class="product__description property">
-                <h3 class="property__heading font_heading">Описание</h3>
-                <div>
-                    <p class="text">
-                        Наша самая совершенная система двух камер.<br>
-                        Особый взгляд на прочность дисплея.<br>
-                        Чип, с которым всё супербыстро.<br>
-                        Аккумулятор держится заметно дольше.<br>
-                        <i>iPhone 13 - сильный мира всего.</i>
-                    </p>
-                    <p class="text">Мы разработали совершенно новую схему расположения и развернули объективы на 45 градусов. Благодаря этому внутри корпуса поместилась наша лучшая система двух камер с увеличенной матрицей широкоугольной камеры. Кроме того, мы освободили место для системы оптической стабилизации изображения сдвигом матрицы. И повысили скорость работы матрицы на сверхширокоугольной камере.</p>
-                    <p class="text">Новая сверхширокоугольная камера видит больше деталей в тёмных областяхснимков. Новая широкоугольная камера улавливает на 47% больше света для более качественных фотографий и видео. Новая оптическая стабилизация со сдвигом матрицы обеспечит чёткие кадры даже в неустойчивом положении.</p>
-                    <p class="text">Режим «Киноэффект» автоматически добавляет великолепные эффекты перемещения фокуса и изменения резкости. Просто начните запись видео. Режим «Киноэффект» будет удерживать фокус на объекте съёмки, создавая красивый эффект размытия вокруг него. Режим «Киноэффект» распознаёт, когда нужно перевести фокус на другого человека или объект, который появился в кадре. Теперь ваши видео будут смотреться как настоящее кино.</p>
-                </div>
-            </section>
-            <!-- Model comparison chart -->
-            <section class="product__comparison property">
-                <h3 class="property__heading font_heading">Сравнение моделей</h3>
-                <div class="comparison-chart grid">
-                    <div class="comparison-chart__row comparison-chart__row_header grid">
-                        <div class="comparison-chart__col">Модель</div>
-                        <div class="comparison-chart__col">Вес</div>
-                        <div class="comparison-chart__col">Высота</div>
-                        <div class="comparison-chart__col">Ширина</div>
-                        <div class="comparison-chart__col">Толщина</div>
-                        <div class="comparison-chart__col">Чип</div>
-                        <div class="comparison-chart__col">Объем памяти</div>
-                        <div class="comparison-chart__col">Беспроводная зарядка</div>
-                        <div class="comparison-chart__col">Аккумулятор</div>
-                    </div>
-                    <div class="comparison-chart__row grid">
-                        <div class="comparison-chart__col">iPhone 11</div>
-                        <div class="comparison-chart__col">194 г</div>
-                        <div class="comparison-chart__col">150.9 мм</div>
-                        <div class="comparison-chart__col">75.7 мм</div>
-                        <div class="comparison-chart__col">8.3 мм</div>
-                        <div class="comparison-chart__col">A13 Bioniс</div>
-                        <div class="comparison-chart__col">до 128 Гб</div>
-                        <div class="comparison-chart__col">нет</div>
-                        <div class="comparison-chart__col">до 17 часов</div>
-                    </div>
-                    <div class="comparison-chart__row grid">
-                        <div class="comparison-chart__col">iPhone 12</div>
-                        <div class="comparison-chart__col">164 г</div>
-                        <div class="comparison-chart__col">146.7 мм</div>
-                        <div class="comparison-chart__col">71.5 мм</div>
-                        <div class="comparison-chart__col">7.4 мм</div>
-                        <div class="comparison-chart__col">A14 Bioniс</div>
-                        <div class="comparison-chart__col">до 256 Гб</div>
-                        <div class="comparison-chart__col">да</div>
-                        <div class="comparison-chart__col">до 19 часов</div>
-                    </div>
-                    <div class="comparison-chart__row grid">
-                        <div class="comparison-chart__col">iPhone 13</div>
-                        <div class="comparison-chart__col">174 г</div>
-                        <div class="comparison-chart__col">146.7 мм</div>
-                        <div class="comparison-chart__col">71.5 мм</div>
-                        <div class="comparison-chart__col">7.65 мм</div>
-                        <div class="comparison-chart__col">A15 Bioniс</div>
-                        <div class="comparison-chart__col">до 512 Гб</div>
-                        <div class="comparison-chart__col">да</div>
-                        <div class="comparison-chart__col">до 19 часов</div>
-                    </div>
-                </div>
-            </section>
-            <!-- Reviews -->
-            <section class="product__reviews reviews">
-                <!-- Reviews header -->
-                <div class="reviews__header">
-                    <h3 class="reviews__title font_heading">Отзывы</h3>
-                    <span class="reviews__count">425</span>
-                    <div class="btn">Добавить отзыв</div>
-                </div>
-                <div class="reviews__items">
-                    <!-- Review -->
-                    <div class="product__review reviews__item review">
-                        <!-- Review image -->
-                        <img class="review__img" src="../../static/media/img/review-1.jpeg" height="200" alt="Фото рецензента" />
-                        <!-- Review info -->
-                        <div class="review__info">
-                            <h4 class="review__name font_heading">Марк Г.</h4>
-                            <!-- Review rating -->
-                            <img
-                                class="review__rating"
-                                src="../../static/media/img/star-5.png"
-                                height="30"
-                                alt="Оценка 5 звёзд"
-                            />
-                            <!-- Review details -->
-                            <div class="review__details">
-                                <p class="review__detail text"><b>Опыт использования:</b> менее месяца</p>
-                                <p class="review__detail text"><b>Достоинства:</b><br> это мой первый айфон после после огромного количества телефонов на андроиде. всё плавно, чётко и красиво. довольно шустрое устройство. камера весьма неплохая, ширик тоже на высоте.</p>
-                                <p class="review__detail text"><b>Недостатки:</b><br> к самому устройству мало имеет отношение, но перенос данных с андроида - адская вещь) а если нужно переносить фото с компа, то это только через itunes, который урезает качество фотографий исходное</p>
+            </div>
+            <div class="product__body">
+                <div class="product__main">
+                    <!-- Properties -->
+                    <div class="product__properties">
+                        <!-- Color property -->
+                        <div class="product__property property">
+                            <h3 class="property__heading font_heading">
+                                Цвет товара: <span class="property__value">Синий</span>
+                            </h3>
+                            <div class="property__options">
+                                <img class="property__option" src="../../static/media/img/color-1.webp" height="100" alt="Красный iPhone 13" />
+                                <img class="property__option" src="../../static/media/img/color-2.webp" height="100" alt="Зелёный iPhone 13" />
+                                <img class="property__option" src="../../static/media/img/color-3.webp" height="100" alt="Розовый iPhone 13" />
+                                <img class="property__option" src="../../static/media/img/color-4.webp" height="100" alt="Бирюзовый iPhone 13" />
+                                <img class="property__option" src="../../static/media/img/color-5.webp" height="100" alt="Синий iPhone 13" />
+                                <img class="property__option" src="../../static/media/img/color-6.webp" height="100" alt="Чёрный iPhone 13" />
                             </div>
                         </div>
-                    </div>
-                    <hr />
-                    <!-- Review -->
-                    <div class="product__review reviews__item review">
-                        <!-- Review image -->
-                        <img class="review__img" src="../../static/media/img/review-2.jpeg" height="200" alt="Фото рецензента" />
-                        <!-- Review info -->
-                        <div class="review__info">
-                            <h4 class="review__name font_heading">Валерий Коваленко</h4>
-                            <!-- Review rating -->
-                            <img
-                                class="review__rating"
-                                src="../../static/media/img/star-4.png"
-                                height="30"
-                                alt="Оценка 4 звёзды"
-                            />
-                            <!-- Review details -->
-                            <div class="review__details">
-                                <p class="review__detail text"><b>Опыт использования:</b> менее месяца</p>
-                                <p class="review__detail text"><b>Достоинства:</b><br> OLED экран, Дизайн, Система камер, Шустрый А15, Заряд держит долго</p>
-                                <p class="review__detail text"><b>Недостатки:</b><br> Плохая ремонтопригодность</p>
+                        <!-- RAM property -->
+                        <div class="product__property property">
+                            <h3 class="property__heading font_heading">
+                                Конфигурация памяти: <span class="property__value">128 ГБ</span>
+                            </h3>
+                            <div class="property__options">
+                                <div class="property__option btn">128 ГБ</div>
+                                <div class="property__option btn">256 ГБ</div>
+                                <div class="property__option btn">512 ГБ</div>
                             </div>
+                        </div>
+                        <!-- Characteristics property -->
+                        <div class="product__property property">
+                            <h3 class="property__heading font_heading">Характеристики товара</h3>
+                            <ul class="property__list list">
+                                <li class="list__item">Экран: <b>6.1</b></li>
+                                <li class="list__item">Встроенная память: <b>128 ГБ</b></li>
+                                <li class="list__item">Операционная система: <b>iOS 15</b></li>
+                                <li class="list__item">Беспроводные интерфейсы: <b>NFC, Bluetooth, Wi-Fi</b></li>
+                                <li class="list__item">Процессор: <b><a class="link" href="https://ru.wikipedia.org/wiki/Apple_A15" target="_blank">Apple A15 Bionic</a></b></li>
+                                <li class="list__item">Вес: <b>173 г</b></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Description -->
+                    <div class="product__description property">
+                        <h3 class="property__heading font_heading">Описание</h3>
+                        <div>
+                            <p class="paragraph">
+                                Наша самая совершенная система двух камер.<br>
+                                Особый взгляд на прочность дисплея.<br>
+                                Чип, с которым всё супербыстро.<br>
+                                Аккумулятор держится заметно дольше.<br>
+                                <i>iPhone 13 - сильный мира всего.</i>
+                            </p>
+                            <p class="paragraph">Мы разработали совершенно новую схему расположения и развернули объективы на 45 градусов. Благодаря этому внутри корпуса поместилась наша лучшая система двух камер с увеличенной матрицей широкоугольной камеры. Кроме того, мы освободили место для системы оптической стабилизации изображения сдвигом матрицы. И повысили скорость работы матрицы на сверхширокоугольной камере.</p>
+                            <p class="paragraph">Новая сверхширокоугольная камера видит больше деталей в тёмных областяхснимков. Новая широкоугольная камера улавливает на 47% больше света для более качественных фотографий и видео. Новая оптическая стабилизация со сдвигом матрицы обеспечит чёткие кадры даже в неустойчивом положении.</p>
+                            <p class="paragraph">Режим «Киноэффект» автоматически добавляет великолепные эффекты перемещения фокуса и изменения резкости. Просто начните запись видео. Режим «Киноэффект» будет удерживать фокус на объекте съёмки, создавая красивый эффект размытия вокруг него. Режим «Киноэффект» распознаёт, когда нужно перевести фокус на другого человека или объект, который появился в кадре. Теперь ваши видео будут смотреться как настоящее кино.</p>
                         </div>
                     </div>
                 </div>
-            </section>
+                <aside class="product__sidebar">
+                    <!-- Product order card -->
+                    <div class="product__order card">
+                        <div class="product__price price">
+                            <div class="price__old">
+                                <s class="price__former">75 990₽</s>
+                                <span class="price__discount badge">-8%</span>
+                            </div>
+                            <div class="price__total">67 990₽</div>
+                        </div>
+                        <div class="product__delivery">
+                            <p>Самовывоз в четверг, 1 сентября — <b>бесплатно</b></p>
+                            <p>Курьером в четверг, 1 сентября — <b>бесплатно</b></p>
+                        </div>
+                        <div class="btn btn_main">Добавить в корзину</div>
+                    </div>
+                    <!-- Advertisement -->
+                    <div class="product__ads">
+                        <iframe class="iframe" height="300" width="420" src="./ads.html">
+                            <p class="iframe__placeholder">Произошла ошибка при загрузке контента.</p>
+                        </iframe>
+                        <iframe class="iframe" height="300" width="420" src="./ads.html">
+                            <p class="iframe__placeholder">Произошла ошибка при загрузке контента.</p>
+                        </iframe>
+                    </div>
+                </aside>
+            </div>
         </main>
         <!-- FOOTER -->
         <footer class="footer">

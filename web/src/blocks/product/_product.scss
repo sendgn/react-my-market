@@ -1,0 +1,11 @@
+.product {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+@import '__header/product__header';
+@import '__body/product__body';
+@import '__sidebar/product__sidebar';
+@import '__gallery/product__gallery';
+@import '__ads/product__ads';
