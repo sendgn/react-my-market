@@ -1,9 +1,10 @@
 .iframe {
-    border: 1px dashed #ccc;
-    height: 400px;
+    border: 1px dashed #888888;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
+    background: #f0f0f0;
 }
 
 @import '__placeholder/iframe__placeholder'
