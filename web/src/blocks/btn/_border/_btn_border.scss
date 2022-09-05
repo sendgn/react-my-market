@@ -2,10 +2,14 @@
     border: 1px solid $color-gray-dark;
     background: $color-white;
     color: $color-black;
+
+    &.selected {
+        border: 2px solid $color-main;
+    }
 }
 
 .btn_border:hover {
-    border: 1px solid $color-main;
-    outline: 1px solid $color-main;
-    background: $color-white;
+    background: $color-gray-light;
 }
+
+@import '_img/btn_border_img';
