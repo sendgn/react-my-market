@@ -1,0 +1,11 @@
+.btn_border {
+    border: 1px solid $color-gray-dark;
+    background: $color-white;
+    color: $color-black;
+}
+
+.btn_border:hover {
+    border: 1px solid $color-main;
+    outline: 1px solid $color-main;
+    background: $color-white;
+}

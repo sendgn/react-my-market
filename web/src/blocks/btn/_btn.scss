@@ -1,11 +1,17 @@
 .btn {
-    padding: 8px 12px;
-    background: #f52;
-    color: #fff;
+    padding: 10px 20px;
+    background: $color-main;
+    color: $color-white;
     display: inline-block;
     cursor: pointer;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid transparent;
 }
 
 .btn:hover {
-    background: #f5673c;
+    background: $color-main-dark;
 }
+
+@import '_large/btn_large';
+@import '_border/btn_border';

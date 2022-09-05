@@ -3,24 +3,28 @@
 
 // Simple components
 @import 'link/link';
-@import 'text/text';
+@import 'paragraph/paragraph';
 @import 'list/list';
 @import 'btn/btn';
 @import 'iframe/iframe';
+@import 'badge/badge';
 
-// Complex components
+// Blocks
+@import 'card/card';
 @import 'logo/logo';
 @import 'breadcrumbs/breadcrumbs';
+@import 'product/product';
 @import 'comparison-chart/comparison-chart';
 @import 'reviews/reviews';
 @import 'review/review';
 @import 'property/property';
+@import 'price/price';
+@import 'ads/ads';
 
 // Layout
 @import 'container/container';
 @import 'header/header';
 @import 'footer/footer';
-@import 'flex/flex';
 @import 'grid/grid';
 
 // Utilities

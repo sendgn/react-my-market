@@ -1,3 +1,6 @@
 .font_heading {
-    font-family: sans-serif;
+    font-weight: 700;
 }
+
+@import '_h1/font_heading_h1';
+@import '_h2/font_heading_h2';
