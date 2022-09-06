@@ -12,5 +12,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f8f8f8;
+    color: #989898;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
 }

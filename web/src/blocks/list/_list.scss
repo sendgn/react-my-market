@@ -1,5 +1,10 @@
 .list {
-    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style-position: inside;
+    list-style-image: url("../media/img/marker.svg");
 }
 
 @import '__item/list__item';
+@import '__item-content/list__item-content';
