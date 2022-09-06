@@ -5,7 +5,8 @@
 }
 
 .btn_border:hover {
-    border: 1px solid $color-main;
-    outline: 1px solid $color-main;
-    background: $color-white;
+    background: $color-gray-light;
 }
+
+@import '_img/btn_border_img';
+@import '_selected/btn_border_selected';
