@@ -25,7 +25,7 @@
     <header class="header container">
         <div class="header__logo logo">
             <img class="logo__img" src="../../static/media/img/logo.svg" alt="Логотип" />
-            <h1 class="logo__title font_heading font_heading_h1"><span class="colored">Мой</span>Маркет</h1>
+            <h1 class="logo__title font_h font_h_1"><span class="colored">Мой</span>Маркет</h1>
         </div>
     </header>
 
@@ -39,9 +39,10 @@
         </nav>
         <!-- PRODUCT -->
         <main class="product">
+            <!-- Product header -->
             <div class="product__header">
                 <!-- Product name -->
-                <h2 class="product__name font_heading font_heading_h2">Смартфон Apple iPhone 13, синий</h2>
+                <h2 class="product__name font_h font_h_2">Смартфон Apple iPhone 13, синий</h2>
                 <!-- Product gallery -->
                 <div class="product__gallery">
                     <img src="../../static/media/img/image-1.webp" height="387" alt="iPhone 13 - вид спереди и сзади" />
@@ -51,15 +52,17 @@
                     <img src="../../static/media/img/image-5.webp" height="387" alt="iPhone 13 - вид сзади и спереди" />
                 </div>
             </div>
+            <!-- Product body -->
             <div class="product__body">
+                <!-- Product info -->
                 <div class="product__main">
                     <!-- Properties -->
                     <div class="product__properties">
                         <!-- Color property -->
                         <div class="product__property property">
-                            <h3 class="property__heading font_heading">
+                            <h4 class="property__heading font_h">
                                 Цвет товара: <span class="property__value">Синий</span>
-                            </h3>
+                            </h4>
                             <div class="property__options">
                                 <div class="property__option btn btn_border btn_border_img">
                                     <img src="../../static/media/img/color-1.png" alt="Красный iPhone 13" />
@@ -83,9 +86,9 @@
                         </div>
                         <!-- RAM property -->
                         <div class="product__property property">
-                            <h3 class="property__heading font_heading">
+                            <h4 class="property__heading font_h">
                                 Конфигурация памяти: <span class="property__value">128 ГБ</span>
-                            </h3>
+                            </h4>
                             <div class="property__options">
                                 <div class="property__option btn btn_border btn_border_selected">128 ГБ</div>
                                 <div class="property__option btn btn_border">256 ГБ</div>
@@ -94,7 +97,7 @@
                         </div>
                         <!-- Characteristics property -->
                         <div class="product__property property">
-                            <h3 class="property__heading font_heading">Характеристики товара</h3>
+                            <h4 class="property__heading font_h">Характеристики товара</h4>
                             <ul class="property__list list">
                                 <li class="list__item"><span class="list__item-content">Экран: <b>6.1</b></span></li>
                                 <li class="list__item"><span class="list__item-content">Встроенная память: <b>128 ГБ</b></span></li>
@@ -107,7 +110,7 @@
                     </div>
                     <!-- Description -->
                     <div class="product__description property">
-                        <h3 class="property__heading font_heading">Описание</h3>
+                        <h4 class="property__heading font_h">Описание</h4>
                         <div>
                             <p class="paragraph">
                                 Наша самая совершенная система двух камер.<br>
@@ -121,7 +124,63 @@
                             <p class="paragraph">Режим «Киноэффект» автоматически добавляет великолепные эффекты перемещения фокуса и изменения резкости. Просто начните запись видео. Режим «Киноэффект» будет удерживать фокус на объекте съёмки, создавая красивый эффект размытия вокруг него. Режим «Киноэффект» распознаёт, когда нужно перевести фокус на другого человека или объект, который появился в кадре. Теперь ваши видео будут смотреться как настоящее кино.</p>
                         </div>
                     </div>
+                    <!-- Reviews -->
+                    <section class="product__reviews reviews">
+                        <!-- Reviews header -->
+                        <div class="reviews__header">
+                            <h3 class="reviews__title font_h font_h_3">Отзывы</h3>
+                            <span class="reviews__count">425</span>
+                            <div class="btn">Добавить отзыв</div>
+                        </div>
+                        <div class="reviews__items">
+                            <!-- Review -->
+                            <div class="product__review reviews__item review">
+                                <!-- Review image -->
+                                <img class="review__img" src="../../static/media/img/review-1.jpeg" height="200" alt="Фото рецензента" />
+                                <!-- Review info -->
+                                <div class="review__info">
+                                    <h4 class="review__name font_heading">Марк Г.</h4>
+                                    <!-- Review rating -->
+                                    <img
+                                        class="review__rating"
+                                        src="../../static/media/img/star-5.png"
+                                        height="30"
+                                        alt="Оценка 5 звёзд"
+                                    />
+                                    <!-- Review details -->
+                                    <div class="review__details">
+                                        <p class="review__detail text"><b>Опыт использования:</b> менее месяца</p>
+                                        <p class="review__detail text"><b>Достоинства:</b><br> это мой первый айфон после после огромного количества телефонов на андроиде. всё плавно, чётко и красиво. довольно шустрое устройство. камера весьма неплохая, ширик тоже на высоте.</p>
+                                        <p class="review__detail text"><b>Недостатки:</b><br> к самому устройству мало имеет отношение, но перенос данных с андроида - адская вещь) а если нужно переносить фото с компа, то это только через itunes, который урезает качество фотографий исходное</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Review -->
+                            <div class="product__review reviews__item review">
+                                <!-- Review image -->
+                                <img class="review__img" src="../../static/media/img/review-2.jpeg" height="200" alt="Фото рецензента" />
+                                <!-- Review info -->
+                                <div class="review__info">
+                                    <h4 class="review__name font_heading">Валерий Коваленко</h4>
+                                    <!-- Review rating -->
+                                    <img
+                                        class="review__rating"
+                                        src="../../static/media/img/star-4.png"
+                                        height="30"
+                                        alt="Оценка 4 звёзды"
+                                    />
+                                    <!-- Review details -->
+                                    <div class="review__details">
+                                        <p class="review__detail text"><b>Опыт использования:</b> менее месяца</p>
+                                        <p class="review__detail text"><b>Достоинства:</b><br> OLED экран, Дизайн, Система камер, Шустрый А15, Заряд держит долго</p>
+                                        <p class="review__detail text"><b>Недостатки:</b><br> Плохая ремонтопригодность</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
+                <!-- Sidebar -->
                 <aside class="product__sidebar">
                     <!-- Product order card -->
                     <div class="product__order card">
