@@ -1,0 +1,17 @@
+.form__field {
+    padding: 15px 20px;
+    border: 1px solid $color-gray-dark;
+    border-radius: 0;
+    font-weight: 500;
+    width: 100%;
+}
+
+.form__field:focus {
+    outline: none;
+    border: 1px solid $color-black;
+    border-radius: 0;
+}
+
+.form__field::placeholder {
+    color: $color-gray-dark;
+}
