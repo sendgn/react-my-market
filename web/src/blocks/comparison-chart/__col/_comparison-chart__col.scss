@@ -1,6 +1,30 @@
 .comparison-chart__col {
+    position: relative;
     padding: 5px 10px;
-    border: 1px solid #eee;
     display: flex;
     align-items: center;
+    border-right: 1px solid $color-gray-dark;
+    cursor: default;
+}
+
+.comparison-chart__col:hover::after,
+.comparison-chart__col:hover::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background-color: $color-gray-light;
+}
+
+.comparison-chart__col:hover::after {
+    top: -5000px;
+    left: 0;
+    width: 100%;
+    height: 10000px;
+}
+
+.comparison-chart__col:hover::before {
+    top: 0;
+    left: -5000px;
+    width: 10000px;
+    height: 100%;
 }

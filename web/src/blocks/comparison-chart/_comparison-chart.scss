@@ -1,6 +1,12 @@
 .comparison-chart {
+    font-weight: 400;
     grid-template-rows: 1fr;
+    border: 1px solid $color-gray-dark;
+    border-right: none;
+    overflow: hidden;
 }
 
 @import '__col/comparison-chart__col';
 @import '__row/comparison-chart__row';
+@import '__header/comparison-chart__header';
+@import '__body/comparison-chart__body';

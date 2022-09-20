@@ -1,5 +1,5 @@
 .comparison-chart__row {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    // grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: 1.3fr 0.9fr repeat(4, 1.2fr) 1.6fr 1.5fr;
 }
 
-@import '_header/comparison-chart__row_header';
