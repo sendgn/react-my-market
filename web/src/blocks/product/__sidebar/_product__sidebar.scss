@@ -4,3 +4,9 @@
     gap: 40px;
     min-width: 420px;
 }
+
+@media screen and (max-width: $screen-desktop) {
+    .product__sidebar {
+        min-width: 360px;
+    }
+}
