@@ -1,9 +1,10 @@
 .link {
     color: $color-secondary;
     text-decoration: none;
-}
-.link:hover {
-    color: $color-main;
+
+    &:hover {
+        color: $color-main;
+    }
 }
 
 @import '_breadcrumbs/link_breadcrumbs';
