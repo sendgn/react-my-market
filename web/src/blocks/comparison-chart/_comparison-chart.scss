@@ -1,5 +1,6 @@
 .comparison-chart {
     font-weight: 400;
+    display: grid;
     grid-template-rows: 1fr;
     border: 1px solid $color-gray-dark;
     border-right: none;

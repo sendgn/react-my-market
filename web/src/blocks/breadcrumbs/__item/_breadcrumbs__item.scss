@@ -1,8 +1,10 @@
-.breadcrumbs__item::after {
-    content: '>';
-    padding: 0 4px;
-}
+.breadcrumbs__item {
+    &::after {
+        content: '>';
+        padding: 0 4px;
+    }
 
-.breadcrumbs__item:last-child::after {
-    content: '';
+    &:last-child::after {
+        content: '';
+    }
 }

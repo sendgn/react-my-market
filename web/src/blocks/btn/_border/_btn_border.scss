@@ -2,10 +2,10 @@
     border: 1px solid $color-gray-dark;
     background: $color-white;
     color: $color-black;
-}
 
-.btn_border:hover {
-    background: $color-gray-light;
+    &:hover {
+        background: $color-gray-light;
+    }
 }
 
 @import '_img/btn_border_img';

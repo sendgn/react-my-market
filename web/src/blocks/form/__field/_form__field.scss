@@ -1,9 +1,11 @@
 .form__field {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
     padding: 15px 20px;
+    width: 100%;
     border: 1px solid $color-gray-dark;
     border-radius: 0;
-    font-weight: 500;
-    width: 100%;
 }
 
 .form__field:focus {
