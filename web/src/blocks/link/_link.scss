@@ -5,6 +5,10 @@
     &:hover {
         color: $color-main;
     }
+
+    &:active {
+        color: $color-main-darkest;
+    }
 }
 
 @import '_breadcrumbs/link_breadcrumbs';

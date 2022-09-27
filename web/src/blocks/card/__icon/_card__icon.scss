@@ -1,0 +1,15 @@
+.card__icon {
+    fill: $color-gray-dark;
+    width: 26px;
+    height: 21px;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        fill: $color-main;
+    }
+
+    &:active {
+        fill: $color-main-darkest;
+    }
+}
