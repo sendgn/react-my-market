@@ -4,3 +4,9 @@
     gap: 100px;
     font-weight: 500;
 }
+
+@media screen and (max-width: $screen-desktop) {
+    .product__body {
+        gap: 40px;
+    }
+}
