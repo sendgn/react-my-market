@@ -1,12 +1,16 @@
 .btn_border {
-    border: 1px solid $color-gray-dark;
+    box-shadow: 0 0 0 1px $color-gray-dark;
     background: $color-white;
     color: $color-black;
 
     &:hover {
         background: $color-gray-light;
     }
+
+    &:active {
+        box-shadow: 0 0 0 2px $color-main-darkest;
+        background: $color-white;
+    }
 }
 
-@import '_img/btn_border_img';
 @import '_selected/btn_border_selected';
