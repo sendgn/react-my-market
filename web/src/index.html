@@ -203,20 +203,19 @@
                 </div>
                 <!-- Reviews -->
                 <div class="product__reviews reviews">
-                    <!-- Reviews header -->
-                    <div class="reviews__header">
-                        <div class="reviews__title">
-                            <h3 class="reviews__heading font_h3">Отзывы</h3>
-                            <h3 class="reviews__count font_h3">425</h3>
-                        </div>
-                        <div class="btn btn_border">Добавить отзыв</div>
+                    <!-- Reviews title -->
+                    <div class="reviews__title">
+                        <h3 class="reviews__heading font_h3">Отзывы</h3>
+                        <h3 class="reviews__count font_h3">425</h3>
                     </div>
                     <!-- Reviews items -->
                     <div class="reviews__items">
                         <!-- Review -->
-                        <div class="product__review reviews__item review">
-                            <!-- Review image -->
-                            <img class="review__img" src="../../static/media/img/review-1.jpeg" width="140" height="140" alt="Фото рецензента" />
+                        <div class="product__review reviews__item review feedback">
+                            <div class="feedback__aside">
+                                <!-- Review image -->
+                                <img class="review__img" src="../../static/media/img/review-1.jpeg" alt="Фото рецензента" />
+                            </div>
                             <!-- Review info -->
                             <div class="review__info">
                                 <div class="review__title">
@@ -250,11 +249,16 @@
                             </div>
                         </div>
                         <!-- Divider -->
-                        <div class="reviews__divider"></div>
+                        <div class="feedback">
+                            <div class="feedback__aside"></div>
+                            <div class="reviews__divider"></div>
+                        </div>
                         <!-- Review -->
-                        <div class="product__review reviews__item review">
-                            <!-- Review image -->
-                            <img class="review__img" src="../../static/media/img/review-2.jpeg" width="140" height="140" alt="Фото рецензента" />
+                        <div class="product__review reviews__item review feedback">
+                            <div class="feedback__aside">
+                                <!-- Review image -->
+                                <img class="review__img" src="../../static/media/img/review-2.jpeg" alt="Фото рецензента" />
+                            </div>
                             <!-- Review info -->
                             <div class="review__info">
                                 <div class="review__title">
@@ -287,6 +291,21 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <!-- Feedback -->
+                <div class="feedback">
+                    <div class="feedback__aside"></div>
+                    <div class="feedback__main property">
+                        <h5 class="feedback__title font_h5">Добавить свой отзыв</h5>
+                        <form class="feedback__form form">
+                            <div class="feedback__inputs form__row">
+                                <input class="feedback__fullname form__input form__field font" type="text" name="fullname" placeholder="Имя и фамилия">
+                                <input class="feedback__rating form__input form__field font" type="number" name="rating" min="1" max="5" placeholder="Оценка">
+                            </div>
+                            <textarea class="feedback__textarea form__textarea form__field font" name="feedback" placeholder="Текст отзыва"></textarea>
+                            <div class="form__submit btn">Отправить отзыв</div>
+                        </form>
                     </div>
                 </div>
             </div>

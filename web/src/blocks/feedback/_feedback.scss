@@ -1,0 +1,11 @@
+.feedback {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 30px;
+}
+
+@import '__aside/feedback__aside';
+@import '__main/feedback__main';
+@import '__form/feedback__form';
+@import '__inputs/feedback__inputs';
+@import '__textarea/feedback__textarea';
