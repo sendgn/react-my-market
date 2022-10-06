@@ -1,0 +1,11 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+@import '__field/form__field';
+@import '__row/form__row';
+@import '__input/form__input';
+@import '__textarea/form__textarea';
+@import '__submit/form__submit';
