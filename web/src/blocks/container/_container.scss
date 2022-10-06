@@ -3,3 +3,10 @@
     margin: 0 auto;
     padding: 0 50px;
 }
+
+@media screen and (max-width: $screen-desktop) {
+    .container {
+        padding: 0 15px;
+        max-width: $screen-big-tablet;
+    }
+}
