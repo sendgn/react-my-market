@@ -1,6 +1,3 @@
-// Basics
-@import 'font/font';
-
 // Simple components
 @import 'link/link';
 @import 'list/list';
@@ -8,6 +5,7 @@
 @import 'iframe/iframe';
 @import 'badge/badge';
 @import 'form/form';
+@import 'icon/icon';
 
 // Blocks
 @import 'card/card';
@@ -30,3 +28,7 @@
 
 // Utilities
 @import 'colored/colored';
+
+// Basics
+@import 'font/font';
+@import 'css/css';
