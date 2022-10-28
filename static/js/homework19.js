@@ -12,11 +12,15 @@ console.log(sum); // Должно быть 400
 /* Упражнение 2 */
 let message = ' привет, медвед      ';
 // Решение
+function trimString(string) {
+    return string.trim();
+}
+
 function capitalizeFirstLetter(string) {
-    string = string.trim();
     return string[0].toUpperCase() + string.slice(1);
 }
-console.log(capitalizeFirstLetter(message)); // “Привет, медвед”
+
+console.log(capitalizeFirstLetter(trimString(message))); // “Привет, медвед”
 
 
 /* Упражнение 3 */
