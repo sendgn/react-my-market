@@ -4,6 +4,56 @@ let product = {
     name: 'Смартфон Apple iPhone 13, синий',
     colorPicked: 'Синий',
     ramPicked: '128Гб',
+    images: [
+        '../../static/media/img/image-1.webp',
+        '../../static/media/img/image-2.webp',
+        '../../static/media/img/image-3.webp',
+        '../../static/media/img/image-4.webp',
+        '../../static/media/img/image-5.webp',
+    ],
+    colors: [
+        {
+            name: 'Красный',
+            url: '../../static/media/img/color-1.png',
+        },
+        {
+            name: 'Зеленый',
+            url: '../../static/media/img/color-2.png',
+        },
+        {
+            name: 'Розовый',
+            url: '../../static/media/img/color-3.png',
+        },
+        {
+            name: 'Бирюзовый',
+            url: '../../static/media/img/color-4.png',
+        },
+        {
+            name: 'Синий',
+            url: '../../static/media/img/color-5.png',
+        },
+        {
+            name: 'Черный',
+            url: '../../static/media/img/color-6.png',
+        },
+    ],
+    ram: [
+        '128 ГБ',
+        '256 ГБ',
+        '512 ГБ',
+    ],
+    delivery: [
+        {
+            name: 'Самовывоз',
+            date: 'четверг, 1 сентября',
+            cost: 0,
+        },
+        {
+            name: 'Курьером',
+            date: 'четверг, 1 сентября',
+            cost: 0,
+        },
+    ],
     characteristics: {
         screen: '6.1',
         ram: '128Гб',
