@@ -34,6 +34,7 @@ function timer() {
         }
     }
 }
+
 timer();
 
 // Exercise 2
@@ -54,10 +55,11 @@ function fetchAndShowUsers(url) {
         
     let counter = 0;
     const intervalId = setInterval(function() {
-        if (!Object.keys(users).length) {
+        if (!users.length) {
             counter++;
         } else {
             console.log(`Время выполнения запроса: ${counter} мс`);
+            console.log(`Получили пользователей: ${users.length}`);
             users.forEach(function (user) {
                 console.log(`— ${user.first_name} ${user.last_name} (${user.email})`);
             });
@@ -65,4 +67,5 @@ function fetchAndShowUsers(url) {
         }
     }, 1);
 }
+
 fetchAndShowUsers('https://reqres.in/api/users')
