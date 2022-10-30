@@ -37,29 +37,32 @@ function timer() {
 timer();
 
 // Exercise 2
-let users = {};
-const promise = fetch('https://reqres.in/api/users');
+function fetchAndShowUsers(url) {
+    let users = {};
+    const promise = fetch(url);
 
-promise
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(response) {
-        users = response.data;
-    })
-    .catch(function(error) {
-        console.error(`Ошибка: ${error}.`);
-    });
-    
-let counter = 0;
-const intervalId = setInterval(function() {
-    if (Object.keys(users).length === 0) {
-        counter++;
-    } else {
-        console.log(`Время выполнения запроса: ${counter} мс`);
-        users.forEach(function (user) {
-            console.log(`— ${user.first_name} ${user.last_name} (${user.email})`);
+    promise
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(response) {
+            users = response.data;
+        })
+        .catch(function(error) {
+            console.error(`Ошибка: ${error}.`);
         });
-        clearInterval(intervalId);
-    }
-}, 1);
+        
+    let counter = 0;
+    const intervalId = setInterval(function() {
+        if (!Object.keys(users).length) {
+            counter++;
+        } else {
+            console.log(`Время выполнения запроса: ${counter} мс`);
+            users.forEach(function (user) {
+                console.log(`— ${user.first_name} ${user.last_name} (${user.email})`);
+            });
+            clearInterval(intervalId);
+        }
+    }, 1);
+}
+fetchAndShowUsers('https://reqres.in/api/users')
