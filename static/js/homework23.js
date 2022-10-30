@@ -39,7 +39,7 @@ timer();
 
 // Exercise 2
 function fetchAndShowUsers(url) {
-    let users = {};
+    let users = [];
     const promise = fetch(url);
 
     promise
