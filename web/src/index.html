@@ -310,8 +310,28 @@
                         <h5 class="feedback__title font__h5">Добавить свой отзыв</h5>
                         <form class="feedback__form form">
                             <div class="feedback__inputs form__row">
-                                <input class="feedback__fullname form__input form__field" type="text" name="fullname" placeholder="Имя и фамилия">
-                                <input class="feedback__rating form__input form__field" type="number" name="rating" min="1" max="5" placeholder="Оценка">
+                                <div class="feedback__input">
+                                    <input
+                                        class="feedback__fullname form__input form__field"
+                                        type="text"
+                                        name="fullname"
+                                        placeholder="Имя и фамилия"
+                                        onclick="hideFormFieldError(this)"
+                                    >
+                                    <div class="form__field-error hidden"></div>
+                                </div>
+                                <div class="feedback__input">
+                                    <input
+                                        class="feedback__rating form__input form__field"
+                                        type="number"
+                                        name="rating"
+                                        min="1"
+                                        max="5"
+                                        placeholder="Оценка"
+                                        onclick="hideFormFieldError(this)"
+                                    >
+                                    <div class="form__field-error hidden"></div>
+                                </div>    
                             </div>
                             <textarea class="feedback__textarea form__textarea form__field" name="feedback" placeholder="Текст отзыва"></textarea>
                             <div class="form__submit btn">Отправить отзыв</div>
@@ -373,7 +393,6 @@
     </footer>
 
     <!-- Scripts -->
-    <!-- <script src="../../static/js/index.js"></script> -->
-    <script src="../../static/js/homework23.js"></script>
+    <script src="../../static/js/page-product.js"></script>
 </body>
 </html>
