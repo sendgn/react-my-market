@@ -1,72 +1,130 @@
 'use strict';
 
-function init() {
-    const feedbackForm = document.querySelector('.feedback__form');
-    const feedbackSubmit = feedbackForm.querySelector('.form__submit');
-    const feedbackInputs = feedbackForm.querySelectorAll('.form__input');
+const form = document.getElementById('form');
+const fields = form.querySelectorAll('.form__field');
 
-    function showFormFieldError(input, errorText) {
-        const errorBox = input.parentElement.querySelector('.form__field-error');
-        errorBox.classList.remove('hidden');
-        errorBox.textContent = errorText;
-        input.classList.add('form__field_invalid');
-    }
+const inputFullname = document.getElementById('fullname');
+const inputRating = document.getElementById('rating');
+const inputComment = document.getElementById('comment');
 
-    function hideFormFieldError(input) {
-        const errorBox = input.parentElement.querySelector('.form__field-error');
-        errorBox.classList.add('hidden');
-        input.classList.remove('form__field_invalid');
-    }
+let objectForm = {
+    fullname: {
+        id: 'fullname',
+        value: undefined,
+        error: false,
+        errorList: { 
+            empty: 'Вы забыли указать имя и фамилию',
+            tooShort: 'Имя не может быть короче 2-х символов',
+        },
+    },
+    rating: {
+        id: 'rating',
+        value: undefined,
+        error: false,
+        errorList: { 
+            notInRange: 'Оценка должна быть от 1 до 5',
+        },
+    },
+    comment: { 
+        id: 'comment',
+        value: undefined,
+        error: false,
+        errorList: {},
+    },
+    isFormValid: false,
+};
 
-    function resetFormFieldErrors() {
-        feedbackInputs.forEach(function (input) {
-            hideFormFieldError(input)
-        });
-    }
+const validators = {
+    fullname: function (value) {
+        let errorText = '';
+        const errorList = objectForm.fullname.errorList;
 
-    function validateFeedbackFullname() {
-        const input = feedbackForm.querySelector('.feedback__fullname');
-        const inputValue = input.value;
-        
-        if (!inputValue) {
-            showFormFieldError(input, 'Вы забыли указать имя и фамилию');
-        } else if (inputValue.length < 2) {
-            showFormFieldError(input, 'Имя не может быть короче 2-х символов');
+        if (!value) {
+            errorText = errorList['empty'];
+            showFormFieldError(inputFullname, errorText);
+        } else if (value.length < 2) {
+            errorText = errorList['tooShort'];
+            showFormFieldError(inputFullname, errorText);
         } else {
-            hideFormFieldError(input);
-            return true;
+            hideFormFieldError(inputFullname);
+            return { isValid: true, errorText: errorText };
         }
 
-        return false;
-    }
+        return { isValid: false, errorText: errorText };
+    },
+    rating: function (value) {
+        const valueNum = +value;
+        let errorText = '';
+        const errorList = objectForm.rating.errorList;
 
-    function validateFeedbackRating() {
-        const input = feedbackForm.querySelector('.feedback__rating');
-        const inputValue = +input.value;
-
-        if (!inputValue || Number.isNaN(inputValue) || inputValue > 5 || inputValue < 1) {
-            showFormFieldError(input, 'Оценка должна быть от 1 до 5');
+        if (!valueNum || Number.isNaN(valueNum) || valueNum > 5 || valueNum < 1) {
+            errorText = errorList['notInRange'];
+            showFormFieldError(inputRating, errorText);
         } else {
-            hideFormFieldError(input);
-            return true;
+            hideFormFieldError(inputRating);
+            return { isValid: true, errorText };
         }
 
-        return false;
-    }
+        return { isValid: false, errorText };
+    },
+    comment: function (value) {
+        // validation logic
+        return { isValid: true, errorText: '' };
+    },
+}
 
-    function validateFeedbackForm() {
-        resetFormFieldErrors();
-        if (validateFeedbackFullname()) {
-            validateFeedbackRating();
-        }
-    }
+function showFormFieldError(input, errorText) {
+    const errorBox = input.parentElement.querySelector('.form__field-error');
+    errorBox.textContent = errorText;
+    errorBox.classList.remove('hidden');
+    input.classList.add('form__field_invalid');
+}
 
-    feedbackSubmit.addEventListener('click', validateFeedbackForm);
-    feedbackInputs.forEach(function (input) {
-        input.addEventListener('focus', function () {
-            hideFormFieldError(input);
-        });
+function hideFormFieldError(input) {
+    const errorBox = input.parentElement.querySelector('.form__field-error');
+    errorBox.classList.add('hidden');
+    input.classList.remove('form__field_invalid');
+}
+
+let timeoutId;
+function onInputChange(event) {
+    const { target } = event;
+    const targetValue = target.value;
+
+    // How check if it really change input?
+
+    const name = target.getAttribute('id');
+    clearTimeout(timeoutId);
+
+    // Если человек быстро перейдет в другой инпут, 
+    // старый инпут перетрется, как это исправить?
+    timeoutId = setTimeout(function () {
+        // Save input value to local storage
+        localStorage.setItem(name, targetValue);
+
+        objectForm[name].value = targetValue;
+        const { isValid, errorText } = validators[name](targetValue);
+
+        objectForm[name].error = !isValid;
+        objectForm[name].errorText = errorText;
+    }, 1000);
+}
+
+function initForms() {
+    objectForm.fullname.value = localStorage.getItem('fullname') || '';
+    objectForm.rating.value = localStorage.getItem('rating') || '';
+    objectForm.comment.value = localStorage.getItem('comment') || '';
+
+    inputFullname.value = objectForm.fullname.value;
+    inputRating.value = objectForm.rating.value;
+    inputComment.value = objectForm.comment.value;
+
+    // On input change
+    form.addEventListener('change', onInputChange);
+    // On input focus
+    form.addEventListener('focusin', function (event) {
+        hideFormFieldError(event.target);
     });
 }
 
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', initForms);
