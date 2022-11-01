@@ -41,30 +41,29 @@ const validators = {
 
         if (!value) {
             errorText = errorList['empty'];
-            showFormFieldError(inputFullname, errorText);
         } else if (value.length < 2) {
             errorText = errorList['tooShort'];
-            showFormFieldError(inputFullname, errorText);
         } else {
-            hideFormFieldError(inputFullname);
+            makeFieldValid(inputFullname);
             return { isValid: true, errorText: errorText };
         }
 
+        makeFieldInvalid(inputFullname, errorText);
         return { isValid: false, errorText: errorText };
     },
     rating: function (value) {
-        const valueNum = +value;
         let errorText = '';
+        const valueNum = +value;
         const errorList = objectForm.rating.errorList;
 
         if (!valueNum || Number.isNaN(valueNum) || valueNum > 5 || valueNum < 1) {
             errorText = errorList['notInRange'];
-            showFormFieldError(inputRating, errorText);
         } else {
-            hideFormFieldError(inputRating);
+            makeFieldValid(inputRating);
             return { isValid: true, errorText };
         }
 
+        makeFieldInvalid(inputRating, errorText);
         return { isValid: false, errorText };
     },
     comment: function (value) {
@@ -73,17 +72,33 @@ const validators = {
     },
 }
 
-function showFormFieldError(input, errorText) {
-    const errorBox = input.parentElement.querySelector('.form__field-error');
-    errorBox.textContent = errorText;
-    errorBox.classList.remove('hidden');
-    input.classList.add('form__field_invalid');
+function highlightField(field) {
+    field.classList.add('form__field_invalid');
 }
 
-function hideFormFieldError(input) {
-    const errorBox = input.parentElement.querySelector('.form__field-error');
+function lowlightField(field) {
+    field.classList.remove('form__field_invalid');
+}
+
+function showFieldError(field, errorText) {
+    const errorBox = field.parentElement.querySelector('.form__field-error');
+    errorBox.textContent = errorText;
+    errorBox.classList.remove('hidden');
+}
+
+function hideFieldError(field) {
+    const errorBox = field.parentElement.querySelector('.form__field-error');
     errorBox.classList.add('hidden');
-    input.classList.remove('form__field_invalid');
+}
+
+function makeFieldValid(field) {
+    hideFieldError(field);
+    lowlightField(field);
+}
+
+function makeFieldInvalid(field, errorText) {
+    showFieldError(field, errorText);
+    highlightField(field);
 }
 
 let timeoutId;
@@ -102,9 +117,9 @@ function onInputChange(event) {
         // Save input value to local storage
         localStorage.setItem(name, targetValue);
 
-        objectForm[name].value = targetValue;
         const { isValid, errorText } = validators[name](targetValue);
 
+        objectForm[name].value = targetValue;
         objectForm[name].error = !isValid;
         objectForm[name].errorText = errorText;
     }, 1000);
@@ -121,9 +136,15 @@ function initForms() {
 
     // On input change
     form.addEventListener('change', onInputChange);
-    // On input focus
+    // On input focus out
+    form.addEventListener('focusout', onInputChange);
+    // On input focus in
     form.addEventListener('focusin', function (event) {
-        hideFormFieldError(event.target);
+        const { target } = event;
+        hideFieldError(target);
+        lowlightField(target);
+        // FIXME: Вывести хотя бы одну ошибку при наличии полей, выделенных красным
+        fields.forEach(field => hideFieldError(field));
     });
 }
 
