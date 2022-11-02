@@ -91,6 +91,11 @@ function hideFieldError(field) {
     errorBox.classList.add('hidden');
 }
 
+function toggleFieldError(field) {
+    const errorBox = field.parentElement.querySelector('.form__field-error');
+    errorBox.classList.toggle('hidden');
+}
+
 function makeFieldValid(field) {
     hideFieldError(field);
     lowlightField(field);
@@ -106,13 +111,9 @@ function onInputChange(event) {
     const { target } = event;
     const targetValue = target.value;
 
-    // How check if it really change input?
-
     const name = target.getAttribute('id');
     clearTimeout(timeoutId);
 
-    // Если человек быстро перейдет в другой инпут, 
-    // старый инпут перетрется, как это исправить?
     timeoutId = setTimeout(function () {
         // Save input value to local storage
         localStorage.setItem(name, targetValue);
@@ -122,7 +123,7 @@ function onInputChange(event) {
         objectForm[name].value = targetValue;
         objectForm[name].error = !isValid;
         objectForm[name].errorText = errorText;
-    }, 1000);
+    }, 500);
 }
 
 function initForms() {
@@ -143,7 +144,6 @@ function initForms() {
         const { target } = event;
         hideFieldError(target);
         lowlightField(target);
-        // FIXME: Вывести хотя бы одну ошибку при наличии полей, выделенных красным
         fields.forEach(field => hideFieldError(field));
     });
 }
