@@ -1,35 +1,37 @@
 'use strict';
 
 const form = document.getElementById('form');
-const fields = form.querySelectorAll('.form__field');
+const formFields = form.querySelectorAll('.form__field');
 
 const inputFullname = document.getElementById('fullname');
 const inputRating = document.getElementById('rating');
 const inputComment = document.getElementById('comment');
 
 let objectForm = {
-    fullname: {
-        id: 'fullname',
-        value: undefined,
-        error: false,
-        errorList: { 
-            empty: 'Вы забыли указать имя и фамилию',
-            tooShort: 'Имя не может быть короче 2-х символов',
+    fields: {
+        fullname: {
+            id: 'fullname',
+            value: undefined,
+            error: false,
+            errorList: { 
+                empty: 'Вы забыли указать имя и фамилию',
+                tooShort: 'Имя не может быть короче 2-х символов',
+            },
         },
-    },
-    rating: {
-        id: 'rating',
-        value: undefined,
-        error: false,
-        errorList: { 
-            notInRange: 'Оценка должна быть от 1 до 5',
+        rating: {
+            id: 'rating',
+            value: undefined,
+            error: false,
+            errorList: { 
+                notInRange: 'Оценка должна быть от 1 до 5',
+            },
         },
-    },
-    comment: { 
-        id: 'comment',
-        value: undefined,
-        error: false,
-        errorList: {},
+        comment: { 
+            id: 'comment',
+            value: undefined,
+            error: false,
+            errorList: {},
+        },
     },
     isFormValid: false,
 };
@@ -37,33 +39,33 @@ let objectForm = {
 const validators = {
     fullname: function (value) {
         let errorText = '';
-        const errorList = objectForm.fullname.errorList;
+        const errorList = objectForm.fields.fullname.errorList;
 
         if (!value) {
             errorText = errorList['empty'];
         } else if (value.length < 2) {
             errorText = errorList['tooShort'];
         } else {
-            makeFieldValid(inputFullname);
+            makeFieldLookValid(inputFullname);
             return { isValid: true, errorText: errorText };
         }
 
-        makeFieldInvalid(inputFullname, errorText);
+        makeFieldLookInvalid(inputFullname, errorText);
         return { isValid: false, errorText: errorText };
     },
     rating: function (value) {
         let errorText = '';
         const valueNum = +value;
-        const errorList = objectForm.rating.errorList;
+        const errorList = objectForm.fields.rating.errorList;
 
         if (!valueNum || Number.isNaN(valueNum) || valueNum > 5 || valueNum < 1) {
             errorText = errorList['notInRange'];
         } else {
-            makeFieldValid(inputRating);
+            makeFieldLookValid(inputRating);
             return { isValid: true, errorText };
         }
 
-        makeFieldInvalid(inputRating, errorText);
+        makeFieldLookInvalid(inputRating, errorText);
         return { isValid: false, errorText };
     },
     comment: function (value) {
@@ -91,23 +93,32 @@ function hideFieldError(field) {
     errorBox.classList.add('hidden');
 }
 
-function toggleFieldError(field) {
-    const errorBox = field.parentElement.querySelector('.form__field-error');
-    errorBox.classList.toggle('hidden');
-}
-
-function makeFieldValid(field) {
+function makeFieldLookValid(field) {
     hideFieldError(field);
     lowlightField(field);
 }
 
-function makeFieldInvalid(field, errorText) {
+function makeFieldLookInvalid(field, errorText) {
     showFieldError(field, errorText);
     highlightField(field);
 }
 
+function updateFormValidity(objectForm) {
+    for (let field in objectForm.fields) {
+        if (objectForm.fields[field].error) {
+            formFields.forEach(formField => hideFieldError(formField));
+            validators[field](objectForm.fields[field].value);
+            objectForm.isFormValid = false;
+            return false;
+        }
+    }
+
+    objectForm.isFormValid = true;
+    return true;
+}
+
 let timeoutId;
-function onInputChange(event) {
+function onFocusout(event) {
     const { target } = event;
     const targetValue = target.value;
 
@@ -120,31 +131,31 @@ function onInputChange(event) {
 
         const { isValid, errorText } = validators[name](targetValue);
 
-        objectForm[name].value = targetValue;
-        objectForm[name].error = !isValid;
-        objectForm[name].errorText = errorText;
-    }, 500);
+        objectForm.fields[name].value = targetValue;
+        objectForm.fields[name].error = !isValid;
+        objectForm.fields[name].errorText = errorText;
+
+        updateFormValidity(objectForm);
+    }, 300);
 }
 
 function initForms() {
-    objectForm.fullname.value = localStorage.getItem('fullname') || '';
-    objectForm.rating.value = localStorage.getItem('rating') || '';
-    objectForm.comment.value = localStorage.getItem('comment') || '';
+    objectForm.fields.fullname.value = localStorage.getItem('fullname') || '';
+    objectForm.fields.rating.value = localStorage.getItem('rating') || '';
+    objectForm.fields.comment.value = localStorage.getItem('comment') || '';
 
-    inputFullname.value = objectForm.fullname.value;
-    inputRating.value = objectForm.rating.value;
-    inputComment.value = objectForm.comment.value;
+    inputFullname.value = objectForm.fields.fullname.value;
+    inputRating.value = objectForm.fields.rating.value;
+    inputComment.value = objectForm.fields.comment.value;
 
-    // On input change
-    form.addEventListener('change', onInputChange);
     // On input focus out
-    form.addEventListener('focusout', onInputChange);
+    form.addEventListener('focusout', onFocusout);
     // On input focus in
     form.addEventListener('focusin', function (event) {
         const { target } = event;
-        hideFieldError(target);
-        lowlightField(target);
-        fields.forEach(field => hideFieldError(field));
+        setTimeout(function () {
+            makeFieldLookValid(target);
+        }, 350);
     });
 }
 
