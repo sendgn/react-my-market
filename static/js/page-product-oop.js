@@ -15,6 +15,7 @@ class Form {
 
     // Properties
     fields = {};
+    validators = {};
 
     formElement = document.getElementById('form');
     formFieldsElements = this.formElement.querySelectorAll('.form__field');
@@ -66,25 +67,6 @@ class Form {
     }
 
     handleFocusout(event) {
-        let timeoutId;
-        const { target } = event;
-        const targetValue = target.value;
-
-        const name = target.getAttribute('id');
-        clearTimeout(timeoutId);
-
-        timeoutId = setTimeout(() => {
-            // Save input value to local storage
-            localStorage.setItem(name, targetValue);
-
-            const { isValid, errorText } = this.validators[name](targetValue);
-
-            this.fields[name].value = targetValue;
-            this.fields[name].error = !isValid;
-            this.fields[name].errorText = errorText;
-
-            this.updateFormValidity(this);
-        }, 300);
     }
 
     loadFromLocalStorage() {
@@ -95,7 +77,7 @@ class Form {
 
     fillFieldsFromLocalStorage() {
         this.formFieldsElements.forEach((element) => {
-            element.value = this.fields[element.id].value;
+            element.value = this.fields[element.id]?.value || '';
         });
     }
 
@@ -185,6 +167,28 @@ class AddReviewForm extends Form {
             // validation logic
             return { isValid: true, errorText: '' };
         },
+    }
+
+    handleFocusout(event) {
+        let timeoutId;
+        const { target } = event;
+        const targetValue = target.value;
+
+        const name = target.getAttribute('id');
+        clearTimeout(timeoutId);
+
+        timeoutId = setTimeout(() => {
+            // Save input value to local storage
+            localStorage.setItem(name, targetValue);
+
+            const { isValid, errorText } = this.validators[name](targetValue);
+
+            this.fields[name].value = targetValue;
+            this.fields[name].error = !isValid;
+            this.fields[name].errorText = errorText;
+
+            this.updateFormValidity(this);
+        }, 300);
     }
 }
 
