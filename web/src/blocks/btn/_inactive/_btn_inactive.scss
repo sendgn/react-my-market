@@ -1,0 +1,8 @@
+.btn_inactive {
+    background: $color-gray-dark;
+
+    &:hover,
+    &:active {
+        background: $color-gray-dark;
+    }
+}
