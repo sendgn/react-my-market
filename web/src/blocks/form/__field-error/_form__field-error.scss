@@ -1,0 +1,12 @@
+.form__field-error {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(100%);
+    background: $color-main-dark;
+    color: $color-white;
+    padding: 7.5px 20px;
+    font-size: $font-size-sm;
+    transition: all 0.1s ease-out;
+}
