@@ -68,4 +68,4 @@ function fetchAndShowUsers(url) {
     }, 1);
 }
 
-fetchAndShowUsers('https://reqres.in/api/users')
+fetchAndShowUsers('https://reqres.in/api/users');
