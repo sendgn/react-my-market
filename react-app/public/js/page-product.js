@@ -58,6 +58,7 @@ function initCart() {
 function initForms() {
     const form = document.getElementById('form');
     const formFields = form.querySelectorAll('.form__field');
+    const submitBtn = form.querySelector('.form__submit'); 
     
     const inputFullname = document.getElementById('fullname');
     const inputRating = document.getElementById('rating');
@@ -172,6 +173,18 @@ function initForms() {
         objectForm.isFormValid = true;
         return true;
     }
+
+    function resetForm() {
+        inputFullname.value = ''
+        inputRating.value = '';
+        inputComment.value = '';
+
+        objectForm.fields.fullname.value = '';
+        objectForm.fields.rating.value = '';
+        objectForm.fields.comment.value = '';
+
+        localStorage.clear();
+    }
     
     let timeoutId;
     function onFocusout(event) {
@@ -212,8 +225,14 @@ function initForms() {
             makeFieldLookValid(target);
         }, 350);
     });
+    // On click submit btn
+    submitBtn.addEventListener('click', function () {
+        if (objectForm.isFormValid) {
+            resetForm();
+        }
+    });
 }
 
 
-setTimeout(initCart, 50);
-setTimeout(initForms, 50);
+setTimeout(initCart, 100);
+setTimeout(initForms, 100);
