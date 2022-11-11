@@ -3,6 +3,7 @@
 // Cart
 const cartCounter = document.getElementById('cart-counter');
 const addToCartBtn = document.getElementById('add-to-cart-btn');
+
 const productName = document.querySelector('.product__name').textContent;
 
 let objectCart = {

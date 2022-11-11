@@ -1,3 +1,4 @@
+import logo from '../../logo.svg';
 import './PageProduct.scss';
 
 function PageProduct() {
@@ -9,7 +10,7 @@ function PageProduct() {
             <header className="header">
                 <div className="header__container container">
                     <div className="header__logo logo">
-                        <img className="logo__img" src="../../static/media/img/logo.svg" alt="Логотип" />
+                        <img className="logo__img" src={logo} alt="Логотип" />
                         <h1 className="logo__title font__h1"><span className="colored">Мой</span>Маркет</h1>
                     </div>
                     <div className="header__icons">
@@ -75,22 +76,22 @@ function PageProduct() {
                                     </h5>
                                     <div className="property__options">
                                         <div className="property__option property__option_img btn btn_border">
-                                            <img src="../../static/media/img/color-1.png" alt="Красный iPhone 13" />
+                                            <img src="/img/color-1.png" alt="Красный iPhone 13" />
                                         </div>
                                         <div className="property__option property__option_img btn btn_border">
-                                            <img src="../../static/media/img/color-2.png" alt="Зелёный iPhone 13" />
+                                            <img src="/img/color-2.png" alt="Зелёный iPhone 13" />
                                         </div>
                                         <div className="property__option property__option_img btn btn_border">
-                                            <img src="../../static/media/img/color-3.png" alt="Розовый iPhone 13" />
+                                            <img src="/img/color-3.png" alt="Розовый iPhone 13" />
                                         </div>
                                         <div className="property__option property__option_img btn btn_border btn_border_selected">
-                                            <img src="../../static/media/img/color-4.png" alt="Бирюзовый iPhone 13" />
+                                            <img src="/img/color-4.png" alt="Бирюзовый iPhone 13" />
                                         </div>
                                         <div className="property__option property__option_img btn btn_border">
-                                            <img src="../../static/media/img/color-5.png" alt="Синий iPhone 13" />
+                                            <img src="/img/color-5.png" alt="Синий iPhone 13" />
                                         </div>
                                         <div className="property__option property__option_img btn btn_border">
-                                            <img src="../../static/media/img/color-6.png" alt="Чёрный iPhone 13" />
+                                            <img src="/img/color-6.png" alt="Чёрный iPhone 13" />
                                         </div>
                                     </div>
                                 </div>
@@ -123,8 +124,15 @@ function PageProduct() {
                                         </li>
                                         <li className="list__item list__item_property">
                                             <span className="list__item-content list__item-content_property">
-                                                Процессор: <a className="link link_property_list" href="https://ru.wikipedia.org/wiki/Apple_
-                                                A15" target="_blank">Apple A15 Bionic</a>
+                                                Процессор: &nbsp;
+                                                    <a
+                                                        className="link link_property_list"
+                                                        href="https://ru.wikipedia.org/wiki/Apple_A15"
+                                                        rel="noreferrer noopener"
+                                                        target="_blank"
+                                                    >
+                                                        Apple A15 Bionic
+                                                    </a>
                                             </span>
                                         </li>
                                         <li className="list__item list__item_property">
@@ -215,7 +223,7 @@ function PageProduct() {
                                 <div className="product__review reviews__item review feedback">
                                     <div className="feedback__aside">
                                         {/* Review image */}
-                                        <img className="review__img" src="../../static/media/img/review-1.jpeg" alt="Фото рецензента" />
+                                        <img className="review__img" src="/img/review-1.jpeg" alt="Фото рецензента" />
                                     </div>
                                     {/* Review info */}
                                     <div className="review__info">
@@ -225,19 +233,19 @@ function PageProduct() {
                                             {/* Review rating */}
                                             <div className="review__rating rating">
                                                 <div className="rating__img-wrapper">
-                                                    <img className="rating__img" src="../../static/media/img/star.svg" alt="Полная звезда" />
+                                                    <img className="rating__img" src="/img/star.svg" alt="Полная звезда" />
                                                 </div>
                                                 <div className="rating__img-wrapper">
-                                                    <img className="rating__img" src="../../static/media/img/star.svg" alt="Полная звезда" />
+                                                    <img className="rating__img" src="/img/star.svg" alt="Полная звезда" />
                                                 </div>
                                                 <div className="rating__img-wrapper">
-                                                    <img className="rating__img" src="../../static/media/img/star.svg" alt="Полная звезда" />
+                                                    <img className="rating__img" src="/img/star.svg" alt="Полная звезда" />
                                                 </div>
                                                 <div className="rating__img-wrapper">
-                                                    <img className="rating__img" src="../../static/media/img/star.svg" alt="Полная звезда" />
+                                                    <img className="rating__img" src="/img/star.svg" alt="Полная звезда" />
                                                 </div>
                                                 <div className="rating__img-wrapper">
-                                                    <img className="rating__img" src="../../static/media/img/star.svg" alt="Полная звезда" />
+                                                    <img className="rating__img" src="/img/star.svg" alt="Полная звезда" />
                                                 </div>
                                             </div>
                                         </div>
@@ -258,7 +266,7 @@ function PageProduct() {
                                 <div className="product__review reviews__item review feedback">
                                     <div className="feedback__aside">
                                         {/* Review image */}
-                                        <img className="review__img" src="../../static/media/img/review-2.jpeg" alt="Фото рецензента" />
+                                        <img className="review__img" src="/img/review-2.jpeg" alt="Фото рецензента" />
                                     </div>
                                     {/* Review info */}
                                     <div className="review__info">
@@ -268,19 +276,19 @@ function PageProduct() {
                                             {/* Review rating */}
                                             <div className="review__rating rating">
                                                 <div className="rating__img-wrapper">
-                                                    <img className="rating__img" src="../../static/media/img/star.svg" alt="Полная звезда" />
+                                                    <img className="rating__img" src="/img/star.svg" alt="Полная звезда" />
                                                 </div>
                                                 <div className="rating__img-wrapper">
-                                                    <img className="rating__img" src="../../static/media/img/star.svg" alt="Полная звезда" />
+                                                    <img className="rating__img" src="/img/star.svg" alt="Полная звезда" />
                                                 </div>
                                                 <div className="rating__img-wrapper">
-                                                    <img className="rating__img" src="../../static/media/img/star.svg" alt="Полная звезда" />
+                                                    <img className="rating__img" src="/img/star.svg" alt="Полная звезда" />
                                                 </div>
                                                 <div className="rating__img-wrapper">
-                                                    <img className="rating__img" src="../../static/media/img/star.svg" alt="Полная звезда" />
+                                                    <img className="rating__img" src="/img/star.svg" alt="Полная звезда" />
                                                 </div>
                                                 <div className="rating__img-wrapper">
-                                                    <img className="rating__img" src="../../static/media/img/star-empty.svg" alt="Пустая звезда" />
+                                                    <img className="rating__img" src="/img/star-empty.svg" alt="Пустая звезда" />
                                                 </div>
                                             </div>
                                         </div>
