@@ -195,6 +195,8 @@ function onFocusout(event) {
 }
 
 function initForms() {
+    console.log(1);
+
     objectForm.fields.fullname.value = localStorage.getItem('fullname') || '';
     objectForm.fields.rating.value = localStorage.getItem('rating') || '';
     objectForm.fields.comment.value = localStorage.getItem('comment') || '';

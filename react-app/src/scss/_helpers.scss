@@ -1,0 +1,46 @@
+// Typography
+.font {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+
+    &__h1, &__h2, &__h3, &__h4, &__h5 {
+        font-weight: 700;
+    }
+
+    &__h1 { font-size: 44px; }
+    &__h2 { font-size: 32px; }
+    &__h3 { font-size: 24px; }
+    &__h4 { font-size: 20px; }
+    &__h5 { font-size: 16px; }
+}
+
+// Layout
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 $gutter-lg;
+}
+@media screen and (max-width: $screen-desktop) {
+    .container {
+        padding: 0 $gutter-sm;
+        max-width: $screen-big-tablet;
+    }
+}
+
+// Utils
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.colored {
+    color: $color-main;
+}
+
+// Margin
+.mt-after-header {
+    margin-top: calc($header-height + 20px);
+}
+.mb-md {
+    margin-bottom: 15px;
+}
