@@ -7,7 +7,20 @@ function PageProduct() {
             {/* TOP OF THE PAGE */}
             <div id="top"></div>
 
-            <Breadcrumbs links={ ['Электроника', 'Смартфоны и гаджеты', 'Мобильные телефоны', 'Apple'] } />
+            <Breadcrumbs links={ [ {
+                    name: 'Электроника',
+                    url: '/',
+                }, {
+                    name: 'Смартфоны и гаджеты',
+                    url: '/',
+                }, {
+                    name: 'Мобильные телефоны',
+                    url: '/',
+                }, {
+                    name: 'Apple',
+                    url: '/',
+                } 
+            ] } />
 
             {/* MAIN */}
             <main className="product container">
