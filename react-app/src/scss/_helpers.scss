@@ -3,15 +3,26 @@
     font-family: 'Inter', sans-serif;
     font-size: 16px;
 
-    &__h1, &__h2, &__h3, &__h4, &__h5 {
+    &__h1 {
+        font-size: 44px;
         font-weight: 700;
     }
-
-    &__h1 { font-size: 44px; }
-    &__h2 { font-size: 32px; }
-    &__h3 { font-size: 24px; }
-    &__h4 { font-size: 20px; }
-    &__h5 { font-size: 16px; }
+    &__h2 {
+        font-size: 32px;
+        font-weight: 700;
+    }
+    &__h3 {
+        font-size: 24px;
+        font-weight: 700;
+    }
+    &__h4 {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    &__h5 {
+        font-size: 16px;
+        font-weight: 700;
+    }
 }
 
 // Layout
@@ -19,9 +30,8 @@
     max-width: 1500px;
     margin: 0 auto;
     padding: 0 $gutter-lg;
-}
-@media screen and (max-width: $screen-desktop) {
-    .container {
+
+    @media screen and (max-width: $screen-desktop) {
         padding: 0 $gutter-sm;
         max-width: $screen-big-tablet;
     }
@@ -37,7 +47,7 @@
     color: $color-main;
 }
 
-// Margin
+// Margins
 .mt-after-header {
     margin-top: calc($header-height + 20px);
 }

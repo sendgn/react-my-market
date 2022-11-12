@@ -7,7 +7,7 @@ function PageProduct() {
             {/* TOP OF THE PAGE */}
             <div id="top"></div>
 
-            <Breadcrumbs />
+            <Breadcrumbs links={ ['Электроника', 'Смартфоны и гаджеты', 'Мобильные телефоны', 'Apple'] } />
 
             {/* MAIN */}
             <main className="product container">

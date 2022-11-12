@@ -1,4 +1,7 @@
 .ads {
+    font-size: 14px;
+    font-weight: 400;
+    color: $color-gray-dark;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -9,14 +12,7 @@
         gap: 15px;
     }
 
-    &__title {
-        font-size: 14px;
-        font-weight: 400;
-        color: $color-gray-dark;
-    }
-
     &__frame {
-        color: $color-gray-dark;
         border: 1px dashed #888888;
         display: flex;
         align-items: center;

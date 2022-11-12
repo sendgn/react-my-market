@@ -1,10 +1,15 @@
-function Breadcrumbs() {
+function Breadcrumbs(props) {
+    const { links } = props;
+
     return (
         <nav className="breadcrumbs container mt-after-header mb-md">
-            <div className="breadcrumbs__item"><a className="link link_breadcrumbs" href="/">Электроника</a></div>
-            <div className="breadcrumbs__item"><a className="link link_breadcrumbs" href="/">Смартфоны и гаджеты</a></div>
-            <div className="breadcrumbs__item"><a className="link link_breadcrumbs" href="/">Мобильные телефоны</a></div>
-            <div className="breadcrumbs__item"><a className="link link_breadcrumbs" href="/">Apple</a></div>
+            { links.map(link => { 
+                return (
+                    <div className="breadcrumbs__item">
+                        <a className="link link_breadcrumbs" href="/">{ link }</a>
+                    </div>
+                );
+            }) }
         </nav>
     );
 }
