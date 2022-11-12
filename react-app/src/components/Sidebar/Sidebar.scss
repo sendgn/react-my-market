@@ -1,12 +1,10 @@
-.product__sidebar {
+.sidebar {
     display: flex;
     flex-direction: column;
     gap: 40px;
     min-width: 420px;
-}
 
-@media screen and (max-width: $screen-desktop) {
-    .product__sidebar {
+    @media screen and (max-width: $screen-desktop) {
         min-width: 360px;
     }
 }
