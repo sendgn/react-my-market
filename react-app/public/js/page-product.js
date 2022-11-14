@@ -232,7 +232,5 @@ function initForms() {
         }
     });
 }
-
-
-setTimeout(initCart, 100);
-setTimeout(initForms, 100);
+initCart();
+initForms();
