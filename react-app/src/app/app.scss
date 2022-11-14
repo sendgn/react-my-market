@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import 'styles/variables';
+@import '../components/components';
+@import 'styles/utils';
+@import 'styles/typography';
