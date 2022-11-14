@@ -1,5 +1,5 @@
-import Ads from '../Ads/Ads';
-import Card from '../Card/Card';
+import Ads from '../ads/ads';
+import Card from '../card/card';
 
 function Sidebar() {
     return (

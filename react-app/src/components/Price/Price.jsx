@@ -1,4 +1,4 @@
-import Badge from '../Badge/Badge';
+import Badge from '../badge/badge';
 
 function Price(props) {
     return (

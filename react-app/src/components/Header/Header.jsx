@@ -1,12 +1,12 @@
-import logo from '../../logo.svg';
+import Logo from '../logo/logo';
 
 function Header() {
     return (
         <header className="header">
             <div className="header__container container">
-                <div className="header__logo logo">
-                    <img className="logo__img" src={logo} alt="Логотип" />
-                    <h1 className="logo__title font__h1"><span className="colored">Мой</span>Маркет</h1>
+                <div className="header__logo">
+                    <Logo />
+                    <h1 className="header__title font__h1"><span className="colored">Мой</span>Маркет</h1>
                 </div>
                 <div className="header__icons">
                     <div className="header__icon icon">

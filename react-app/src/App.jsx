@@ -1,7 +1,7 @@
 import useImportScript from './hooks/useImportScript';
-import PageProduct from './components/PageProduct/PageProduct';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import PageProduct from './components/product/product';
+import Header from './components/header/header';
+import Footer from './components/footer/footer';
 
 function App() {
     useImportScript('/js/page-product.js');

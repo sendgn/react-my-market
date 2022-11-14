@@ -7,7 +7,7 @@ function Footer() {
                     <p>Для уточнения информации звоните по номеру <a className="link" href="tel:79000000000">+7 900 000 0000</a>,</p>
                     <p>а предложения по сотрудничеству отправляйте на почту <a className="link" href="mailto:partner@mymarket.com">partner@mymarket.com</a></p>
                 </div>
-                <a className="footer__to-top link" href="#top">Наверх</a>
+                <a className="link" href="#top">Наверх</a>
             </div>
         </footer>
     );

@@ -1,0 +1,15 @@
+.header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid $color-gray-light;
+    background: $color-gray-lightest;
+    z-index: 1000;
+}
+
+@import '__container/header__container';
+@import '__logo/header__logo';
+@import '__icons/header__icons';
+@import '__icon/header__icon';
