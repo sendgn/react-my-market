@@ -1,0 +1,10 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style-position: inside;
+    list-style-image: url("../../../../public/img/marker.svg");
+}
+
+@import '__item/list__item';
+@import '__item-content/list__item-content';

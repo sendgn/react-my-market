@@ -1,0 +1,30 @@
+.header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    width: 100%;
+    height: $header-height;
+    border-bottom: 1px solid $color-gray-light;
+    background: $color-gray-lightest;
+    z-index: 1000;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__icons {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        right: 12px;
+    }
+
+    &__icon {
+        height: 32px;
+        width: auto;
+    }
+}

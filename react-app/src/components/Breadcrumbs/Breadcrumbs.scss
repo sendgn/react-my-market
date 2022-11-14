@@ -1,0 +1,20 @@
+.breadcrumbs {
+    display: flex;
+    padding: 8px $gutter-lg;
+    
+    @media screen and (max-width: $screen-desktop) {
+        padding: 8px $gutter-sm;
+    }
+
+    &__item {
+        &::after {
+            content: '>';
+            padding: 0 4px;
+        }
+
+        &:last-child::after {
+            content: '';
+        }
+    }
+}
+
