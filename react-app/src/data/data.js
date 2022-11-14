@@ -1,5 +1,3 @@
-'use strict';
-
 let product = {
     name: 'Смартфон Apple iPhone 13, синий',
     colorPicked: 'Синий',

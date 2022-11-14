@@ -1,3 +1,13 @@
+// Utils
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.colored {
+    color: $color-main;
+}
+
 // Typography
 .font {
     font-family: 'Inter', sans-serif;
@@ -23,16 +33,6 @@
         font-size: 16px;
         font-weight: 700;
     }
-}
-
-// Utils
-.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.colored {
-    color: $color-main;
 }
 
 // Margins
