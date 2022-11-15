@@ -1,5 +1,5 @@
 import useImportScript from '../hooks/useImportScript';
-import PageProduct from '../components/product/product';
+import ProductPage from '../pages/product/product';
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
 
@@ -9,7 +9,7 @@ function App() {
     return (
         <div className="app font">
             <Header />
-            <PageProduct />
+            <ProductPage />
             <Footer />
         </div>
     );

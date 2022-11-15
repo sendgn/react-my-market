@@ -1,38 +1,90 @@
-let product = {
-    name: 'Смартфон Apple iPhone 13, синий',
-    colorPicked: 'Синий',
+
+// Breadcrumbs
+export const breadcrumbsItems = [
+    {
+        id: 0,
+        name: 'Электроника',
+        url: '/',
+    },
+    {
+        id: 1,
+        name: 'Смартфоны и гаджеты',
+        url: '/',
+    },
+    {
+        id: 2,
+        name: 'Мобильные телефоны',
+        url: '/',
+    },
+    {
+        id: 3,
+        name: 'Apple',
+        url: '/',
+    }
+]
+
+// Product
+export const product = {
+    name: 'Смартфон Apple iPhone 13',
+    colorPicked: 'синий',
     ramPicked: '128Гб',
     images: [
-        '../../static/media/img/image-1.webp',
-        '../../static/media/img/image-2.webp',
-        '../../static/media/img/image-3.webp',
-        '../../static/media/img/image-4.webp',
-        '../../static/media/img/image-5.webp',
+        {
+            id: 0,
+            url: '/img/image-1.webp',
+            alt: 'iPhone 13 - вид спереди и сзади'
+        },
+        {
+            id: 1,
+            url: '/img/image-2.webp',
+            alt: 'iPhone 13 - вид спереди'
+        },
+        {
+            id: 2,
+            url: '/img/image-3.webp',
+            alt: 'iPhone 13 - вид спереди и сзади, повернут боком'
+        },
+        {
+            id: 3,
+            url: '/img/image-4.webp',
+            alt: 'Камера iPhone 13'
+        },
+        {
+            id: 4,
+            url: '/img/image-5.webp',
+            alt: 'iPhone 13 - вид сзади и спереди'
+        },
     ],
     colors: [
         {
-            name: 'Красный',
-            url: '../../static/media/img/color-1.png',
+            id: 0,
+            alt: 'Красный iPhone 13',
+            url: '/img/color-1.png',
         },
         {
-            name: 'Зеленый',
-            url: '../../static/media/img/color-2.png',
+            id: 1,
+            alt: 'Зеленый iPhone 13',
+            url: '/img/color-2.png',
         },
         {
-            name: 'Розовый',
-            url: '../../static/media/img/color-3.png',
+            id: 2,
+            alt: 'Розовый iPhone 13',
+            url: '/img/color-3.png',
         },
         {
-            name: 'Бирюзовый',
-            url: '../../static/media/img/color-4.png',
+            id: 3,
+            alt: 'Бирюзовый iPhone 13',
+            url: '/img/color-4.png',
         },
         {
-            name: 'Синий',
-            url: '../../static/media/img/color-5.png',
+            id: 4,
+            alt: 'Синий iPhone 13',
+            url: '/img/color-5.png',
         },
         {
-            name: 'Черный',
-            url: '../../static/media/img/color-6.png',
+            id: 5,
+            alt: 'Черный iPhone 13',
+            url: '/img/color-6.png',
         },
     ],
     ram: [
@@ -77,9 +129,10 @@ let product = {
     currentPrice: '67 990₽',
     oldPrice: '75 990₽',
     discount: '8%',
-};
+}
 
-let reviews = [
+// Reviews
+export const reviews = [
     {
         author: {
             name: 'Марк Г.',
@@ -104,4 +157,4 @@ let reviews = [
             cons: 'Плохая ремонтопригодность',
         },
     },
-];
+]

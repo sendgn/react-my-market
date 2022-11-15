@@ -3,10 +3,10 @@ import Card from '../card/card';
 
 function Sidebar() {
     return (
-        <div className="sidebar">
+        <aside className="sidebar">
             <Card />
             <Ads />
-        </div>
+        </aside>
     );
 }
 
