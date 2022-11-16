@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { product } from '../../data/data';
 import Sidebar from '../sidebar/sidebar';
 import ComparisonChart from '../comparison-chart/comparisonChart';
@@ -6,6 +7,8 @@ import List from '../list/list';
 
 function Product() {
     const { properties, properties: { description } } = product;
+    let [activeRamBtn, setActiveRamBtn] = useState(0);
+    let [activeColorBtn, setActiveColorBtn] = useState(2);
     
     return (
         <main className="product container">
@@ -38,9 +41,17 @@ function Product() {
                                 title={properties.color.title}
                                 picked={product.colorPicked}
                             >
-                                {properties.color.items.map(item => {
+                                {properties.color.items.map((item, index) => {
+                                    const active = index === activeColorBtn;
+                                    let activeClass = active ? 'btn_border_selected' : '';
                                     return (
-                                        <div className="btn btn_border btn_border_img" key={item.src}>
+                                        <div
+                                            className={`btn btn_border btn_border_img ${activeClass}`}
+                                            onClick={() => {
+                                                return setActiveColorBtn(index);
+                                            }}
+                                            key={item.src}
+                                        >
                                             <img src={item.src} alt={item.alt} />
                                         </div>
                                     );
@@ -53,10 +64,18 @@ function Product() {
                                 picked={product.ramPicked}
                             >
                                 {properties.ram.items.map((item, index) => {
-                                    const active = index === 2;
+                                    const active = index === activeRamBtn;
                                     let activeClass = active ? 'btn_border_selected' : '';
                                     return (
-                                        <div className={`btn btn_border ${activeClass}`} key={item}>{item}</div>
+                                        <div
+                                            className={`btn btn_border ${activeClass}`}
+                                            key={item}
+                                            onClick={() => {
+                                                return setActiveRamBtn(index);
+                                            }}
+                                        >
+                                            {item}
+                                        </div>
                                     );
                                 })}
                             </Property>
