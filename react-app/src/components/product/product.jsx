@@ -1,8 +1,12 @@
 import { product } from '../../data/data';
 import Sidebar from '../sidebar/sidebar';
 import ComparisonChart from '../comparison-chart/comparisonChart';
+import Property from '../property/property';
+import List from '../list/list';
 
 function Product() {
+    const { properties, properties: { description } } = product;
+    
     return (
         <main className="product container">
             {/* Product header */}
@@ -11,10 +15,10 @@ function Product() {
                 <h2 className="product__name font__h2">{product.name}, {product.colorPicked}</h2>
                 {/* Product gallery */}
                 <div className="product__gallery">
-                    {product.images.map(image => {
+                    {product.gallery.map(image => {
                         return (
-                            <div className="product__img-wrapper" key={image.id}>
-                                <img className="product__img" src={image.url} alt={image.alt} />
+                            <div className="product__img-wrapper" key={image.src}>
+                                <img className="product__img" src={image.src} alt={image.alt} />
                             </div>
                         );
                     })}
@@ -28,99 +32,72 @@ function Product() {
                     <div className="product__info">
                         {/* Properties */}
                         <div className="product__properties">
-                            {/* Color property */}
-                            <div className="product__property property">
-                                <h5 className="property__heading font__h5">
-                                    Цвет товара: <span className="property__value">{product.colorPicked}</span>
-                                </h5>
-                                <div className="property__options">
-                                    {product.colors.map(color => {
-                                        return (
-                                            // TODO: Button component
-                                            <div className="btn btn_border btn_img" key={color.id}>
-                                                <img src={color.url} alt={color.alt} />
-                                            </div>
-                                        );
+                            {/* Color */}
+                            <Property
+                                className="product__property"
+                                title={properties.color.title}
+                                picked={product.colorPicked}
+                            >
+                                {properties.color.items.map(item => {
+                                    return (
+                                        <div className="btn btn_border btn_border_img" key={item.src}>
+                                            <img src={item.src} alt={item.alt} />
+                                        </div>
+                                    );
+                                })}
+                            </Property>
+                            {/* RAM */}
+                            <Property
+                                className="product__property"
+                                title={properties.ram.title}
+                                picked={product.ramPicked}
+                            >
+                                {properties.ram.items.map((item, index) => {
+                                    const active = index === 2;
+                                    let activeClass = active ? 'btn_border_selected' : '';
+                                    return (
+                                        <div className={`btn btn_border ${activeClass}`} key={item}>{item}</div>
+                                    );
+                                })}
+                            </Property>
+                            {/* Characteristics */}
+                            <Property
+                                className="product__property"
+                                title={properties.charcs.title}
+                            >
+                                <List items={properties.charcs.items}/>
+                            </Property>
+                            {/* Description */}
+                            <Property
+                                className="product__property"
+                                title={description.title}
+                            >
+                                <div className="paragraphs">
+                                    <div>
+                                        {description.features.map((feature, i) => {
+                                            return (i !== description.features.length - 1 ?
+                                                <div key={`${feature}`}>{feature}</div> :
+                                                <i key={`${feature}`}>{feature}</i>
+                                            );
+                                        })}
+                                    </div>
+                                    {properties.description.paragraphs.map(para => {
+                                        return <p key={para}>{para}</p>
                                     })}
                                 </div>
-                            </div>
-                            {/* RAM property */}
-                            <div className="product__property property">
-                                <h5 className="property__heading font__h5">
-                                    Конфигурация памяти: <span className="property__value">128 ГБ</span>
-                                </h5>
-                                <div className="property__options">
-                                    <div className="btn btn_border btn_border_selected">128 ГБ</div>
-                                    <div className="btn btn_border">256 ГБ</div>
-                                    <div className="btn btn_border">512 ГБ</div>
-                                </div>
-                            </div>
-                            {/* Characteristics property */}
-                            <div className="product__property property">
-                                <h5 className="property__heading font__h5">Характеристики товара</h5>
-                                <ul className="list">
-                                    <li className="list__item">
-                                        <span className="list__item-content">Экран: <b>6.1</b></span>
-                                    </li>
-                                    <li className="list__item">
-                                        <span className="list__item-content">Встроенная память: <b>128 ГБ</b></span>
-                                    </li>
-                                    <li className="list__item">
-                                        <span className="list__item-content">Операционная система: <b>iOS 15</b></span>
-                                    </li>
-                                    <li className="list__item">
-                                        <span className="list__item-content">Беспроводные интерфейсы: <b>NFC, Bluetooth, Wi-Fi</b></span>
-                                    </li>
-                                    <li className="list__item">
-                                        <span className="list__item-content">
-                                            Процессор: &nbsp;
-                                                <a
-                                                    className="link link_list"
-                                                    href="https://ru.wikipedia.org/wiki/Apple_A15"
-                                                    rel="noreferrer noopener"
-                                                    target="_blank"
-                                                >
-                                                    Apple A15 Bionic
-                                                </a>
-                                        </span>
-                                    </li>
-                                    <li className="list__item">
-                                        <span className="list__item-content">Вес: <b>173 г</b></span>
-                                    </li>
-                                </ul>
-                            </div>
-                            {/* Description */}
-                            <div className="product__description property">
-                                <h5 className="property__heading font__h5">Описание</h5>
-                                <div className="property__text">
-                                    <p>
-                                        Наша самая совершенная система двух камер.<br/>
-                                        Особый взгляд на прочность дисплея.<br/>
-                                        Чип, с которым всё супербыстро.<br/>
-                                        Аккумулятор держится заметно дольше.<br/>
-                                        <i>iPhone 13 - сильный мира всего.</i>
-                                    </p>
-                                    <p>Мы разработали совершенно новую схему расположения и развернули объективы на 45 градусов. Благодаря этому внутри корпуса поместилась наша лучшая система двух камер с увеличенной матрицей широкоугольной камеры. Кроме того, мы освободили место для системы оптической стабилизации изображения сдвигом матрицы. И повысили скорость работы матрицы на сверхширокоугольной камере.</p>
-                                    <p>Новая сверхширокоугольная камера видит больше деталей в тёмных областях снимков. Новая широкоугольная камера улавливает на 47% больше света для более качественных фотографий и видео. Новая оптическая стабилизация со сдвигом матрицы обеспечит чёткие кадры даже в неустойчивом положении.</p>
-                                    <p>Режим «Киноэффект» автоматически добавляет великолепные эффекты перемещения фокуса и изменения резкости. Просто начните запись видео. Режим «Киноэффект» будет удерживать фокус на объекте съёмки, создавая красивый эффект размытия вокруг него. Режим «Киноэффект» распознаёт, когда нужно перевести фокус на другого человека или объект, который появился в кадре. Теперь ваши видео будут смотреться как настоящее кино.</p>
-                                </div>
-                            </div>
+                            </Property>
                             {/* Model comparison chart */}
-                            <div className="product__comparison property">
-                                <h5 className="property__heading font__h5">Сравнение моделей</h5>
-                                <ComparisonChart table={{
-                                    header: [ 'Модель', 'Вес', 'Высота', 'Ширина', 'Толщина', 'Чип', 'Объем памяти', 'Аккумулятор' ],
-                                    rows: [
-                                        [ 'iPhone 11', '194 г', '150.9 мм', '75.7 мм', '8.3 мм', 'A13 Bioniс', 'до 128 Гб', 'до 17 часов' ],
-                                        [ 'iPhone 12', '164 г', '146.7 мм', '71.5 мм', '7.4 мм', 'A14 Bioniс', 'до 256 Гб', 'до 19 часов' ],
-                                        [ 'iPhone 13', '174 г', '146.7 мм', '71.5 мм', '7.65 мм', 'A15 Bioniс', 'до 512 Гб', 'до 19 часов' ],
-                                    ]
-                                }} />
-                            </div>
+                            <Property
+                                className="product__property"
+                                title={properties.comparison.title}
+                            >
+                                <ComparisonChart table={properties.comparison.table} />
+                            </Property>
                         </div>
                     </div>
+
                     {/* Reviews */}
-                    <div className="reviews">
+                    <div className="product__reviews reviews">
                         {/* Reviews title */}
                         <div className="reviews__title">
                             <h3 className="reviews__heading font__h3">Отзывы</h3>

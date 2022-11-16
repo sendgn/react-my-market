@@ -5,7 +5,7 @@ function Breadcrumbs(props) {
         <nav className="breadcrumbs container mt-after-header mb-md">
             {items.map(item => {
                 return (
-                    <div className="breadcrumbs__item" key={item.id}>
+                    <div className="breadcrumbs__item" key={item.url}>
                         <a className="link link_breadcrumbs" href={item.url}>{item.name}</a>
                     </div>
                 );
