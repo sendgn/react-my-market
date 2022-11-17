@@ -1,3 +1,10 @@
+.review:not(:last-of-type) {
+    .review__main {
+        border-bottom: 1px dashed $color-gray-dark;
+        padding-bottom: 40px;
+    }
+}
+
 @import '__aside/review__aside';
 @import '__main/review__main';
 @import '__img/review__img';
