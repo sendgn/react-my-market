@@ -16,13 +16,15 @@ function Review(props) {
                 </div>
                 {/* Review details */}
                 <div className="review__details">
-                    {details.map(detail => {
+                    {details.map((detail, index) => {
                         return (
                             <p
                                 className="review__detail"
                                 key={detail.value}
                             >
-                                <b>{detail.title}</b><br />{detail.value}
+                                <b>{detail.title}</b>
+                                {index !== 0 && <br />}
+                                {detail.value}
                             </p>
                         );
                     })}

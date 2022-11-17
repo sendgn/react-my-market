@@ -5,7 +5,12 @@
     border: 1px solid $color-gray-dark;
     border-right: none;
     overflow: hidden;
+    
+    @media screen and (max-width: $screen-big-tablet) {
+        display: none;
+    }
 }
+
 
 @import '__col/comparison-chart__col';
 @import '__row/comparison-chart__row';
