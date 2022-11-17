@@ -6,14 +6,13 @@
 
 @media screen and (max-width: $screen-desktop) {
     .feedback {
-        grid-template-columns: 100px 1fr;
+        grid-template-columns: 0 1fr;
+        gap: 0;
     }
 }
 
-@import '__aside/feedback__aside';
 @import '__main/feedback__main';
 @import '__form/feedback__form';
 @import '__inputs/feedback__inputs';
 @import '__input/feedback__input';
 @import '__textarea/feedback__textarea';
-@import '_add-review/feedback__add-review';

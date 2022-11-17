@@ -1,6 +1,9 @@
-.review__info {
+.review__main {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     gap: 20px;
+
+    border-bottom: 1px dashed $color-gray-dark;
+    padding-bottom: 40px;
 }
