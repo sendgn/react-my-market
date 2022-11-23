@@ -1,6 +1,6 @@
 import { breadcrumbsItems } from '../../data/data';
-import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs';
-import Product from '../../components/product/product';
+import Breadcrumbs from '../../blocks/breadcrumbs/breadcrumbs';
+import Product from '../../blocks/product/product';
 
 function ProductPage() {
     return (
