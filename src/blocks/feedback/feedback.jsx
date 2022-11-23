@@ -1,3 +1,5 @@
+import Btn from "../btn/btn";
+
 function Feedback() {
     return (
         <div className="feedback">
@@ -33,7 +35,9 @@ function Feedback() {
                         <textarea className="feedback__textarea form__textarea form__field" name="feedback" placeholder="Текст отзыва" id="comment"></textarea>
                         <div className="form__field-error hidden"></div>
                     </div>
-                    <div className="form__submit btn">Отправить отзыв</div>
+                    <Btn className="form__submit">
+                        Отправить отзыв
+                    </Btn>
                 </form>
             </div>
         </div>

@@ -1,10 +1,13 @@
+import classNames from 'classnames';
 import Rating from '../rating/rating';
 
 function Review(props) {
-    const { cn, info: { author, rating, details }  } = props;
+    const { className, info: { author, rating, details }  } = props;
     
     return (
-        <div className={`${cn} review`}>
+        <div className={classNames('review', {
+            [className]: className || ''
+        })}>
             <div className="review__aside">
                 <img className="review__img" src={author.img} alt={author.alt} />
             </div>

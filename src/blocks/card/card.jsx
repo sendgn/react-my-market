@@ -1,4 +1,5 @@
 import Price from '../price/price';
+import Btn from '../btn/btn';
 
 function Card() {
     return (
@@ -16,9 +17,14 @@ function Card() {
                     <p>Самовывоз в четверг, 1 сентября — <b>бесплатно</b></p>
                     <p>Курьером в четверг, 1 сентября — <b>бесплатно</b></p>
                 </div>
-                <div className="btn btn_lg" id="add-to-cart-btn">
+                <Btn
+                    id="add-to-cart-btn"
+                    config={{
+                        large: true
+                    }}
+                >
                     <span className="btn__text btn__text_cart">Добавить в корзину</span>
-                </div>
+                </Btn>
             </div>
         </div>
     );

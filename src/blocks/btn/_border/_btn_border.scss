@@ -11,7 +11,8 @@
         box-shadow: 0 0 0 2px $color-main-darkest;
         background: $color-white;
     }
-}
 
-@import '_selected/btn_border_selected';
-@import '_img/btn_border_img';
+    &.selected {
+        box-shadow: 0 0 0 2px $color-main;
+    }
+}

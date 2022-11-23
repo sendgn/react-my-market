@@ -6,11 +6,12 @@ import Property from '../property/property';
 import List from '../list/list';
 import Reviews from '../reviews/reviews';
 import Feedback from '../feedback/feedback';
+import Btn from '../btn/btn';
 
 function Product() {
     const { properties, properties: { description } } = product;
-    let [activeRamBtn, setActiveRamBtn] = useState(0);
-    let [activeColorBtn, setActiveColorBtn] = useState(2);
+    let [selectedRamBtn, setSelectedRamBtn] = useState(0);
+    let [selectedColorBtn, setSelectedColorBtn] = useState(2);
 
     return (
         <main className="product container">
@@ -44,18 +45,18 @@ function Product() {
                                 picked={product.colorPicked}
                             >
                                 {properties.color.items.map((item, index) => {
-                                    const active = index === activeColorBtn;
-                                    let activeClass = active ? 'btn_border_selected' : '';
                                     return (
-                                        <div
-                                            className={`btn btn_border btn_border_img ${activeClass}`}
-                                            onClick={() => {
-                                                return setActiveColorBtn(index);
+                                        <Btn
+                                            config={{
+                                                border: true,
+                                                hasImage: true,
+                                                selected: index === selectedColorBtn
                                             }}
+                                            onClick={() => setSelectedColorBtn(index)}
                                             key={item.src}
                                         >
                                             <img src={item.src} alt={item.alt} />
-                                        </div>
+                                        </Btn>
                                     );
                                 })}
                             </Property>
@@ -66,18 +67,17 @@ function Product() {
                                 picked={product.ramPicked}
                             >
                                 {properties.ram.items.map((item, index) => {
-                                    const active = index === activeRamBtn;
-                                    let activeClass = active ? 'btn_border_selected' : '';
                                     return (
-                                        <div
-                                            className={`btn btn_border ${activeClass}`}
-                                            key={item}
-                                            onClick={() => {
-                                                return setActiveRamBtn(index);
+                                        <Btn
+                                            config={{
+                                                border: true,
+                                                selected: index === selectedRamBtn
                                             }}
+                                            onClick={() => setSelectedRamBtn(index)}
+                                            key={item}
                                         >
                                             {item}
-                                        </div>
+                                        </Btn>
                                     );
                                 })}
                             </Property>

@@ -1,16 +1,9 @@
-import useImportScript from '../hooks/useImportScript';
-import ProductPage from '../pages/product/product';
-import Header from '../blocks/header/header';
-import Footer from '../blocks/footer/footer';
+import PageProduct from '../pages/page-product/page-product';
 
 function App() {
-    useImportScript('/js/page-product.js');
-
     return (
         <div className="font">
-            <Header />
-            <ProductPage />
-            <Footer />
+            <PageProduct />
         </div>
     );
 }

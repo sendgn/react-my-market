@@ -13,7 +13,7 @@ function Reviews(props) {
             {/* Items */}
             <div className="reviews__items">
                 {items.map((item) => {
-                    return <Review cn="reviews__item" info={item} key={item.author.id}/>;
+                    return <Review className="reviews__item" info={item} key={item.author.id}/>;
                 })}
             </div>
         </div>
