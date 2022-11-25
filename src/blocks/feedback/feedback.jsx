@@ -3,13 +3,11 @@ import { useState } from "react";
 function Feedback() {
     // Fullname
     const [fullname, setFullname] = useState(localStorage.getItem('fullname') || '');
-    const [isFullnameError, setIsFullnameError] = useState(false);
-    const [fullnameErrorText, setFullnameErrorText] = useState('');
+    const [fullnameError, setFullnameError] = useState(null);
 
     // Rating
     const [rating, setRating] = useState(localStorage.getItem('rating') || '');
-    const [isRatingError, setIsRatingError] = useState(false);
-    const [ratingErrorText, setRatingErrorText] = useState('');
+    const [ratingError, setRatingError] = useState(null);
 
     // Comment
     const [comment, setComment] = useState(localStorage.getItem('comment') || '');
@@ -17,8 +15,8 @@ function Feedback() {
     // Functions
     const resetForm = () => {
         // Clear errors
-        setIsFullnameError(false);
-        setIsRatingError(false);
+        setFullnameError(null);
+        setRatingError(null);
 
         // Clear fields
         setFullname('');
@@ -49,19 +47,16 @@ function Feedback() {
         e.preventDefault();        
 
         if (fullname.trim() === '') {
-            setFullnameErrorText('Вы забыли указать имя и фамилию');
-            setIsFullnameError(true);
+            setFullnameError('Вы забыли указать имя и фамилию');
             return;
         } else if (fullname.trim().length < 2) {
-            setFullnameErrorText('Имя не может быть короче 2-х символов');
-            setIsFullnameError(true);
+            setFullnameError('Имя не может быть короче 2-х символов');
             return;
         }
 
         const ratingNum = +(rating.trim())
-        if (rating.trim() === '' || ratingNum > 5 || ratingNum < 1) {
-            setRatingErrorText('Оценка должна быть от 1 до 5');
-            setIsRatingError(true);
+        if (rating.trim() === '' || ratingNum > 5 || ratingNum < 1 || Number.isNaN(ratingNum)) {
+            setRatingError('Оценка должна быть от 1 до 5');
             return;
         }
 
@@ -70,10 +65,10 @@ function Feedback() {
 
     const handleOnFocus = (fieldname) => {
         if (fieldname === 'fullname') {
-            setIsFullnameError(false);
+            setFullnameError(null);
         }
         if (fieldname === 'rating') {
-            setIsRatingError(false);
+            setRatingError(null);
         }
     }
 
@@ -82,7 +77,7 @@ function Feedback() {
             <div className="feedback__aside"></div>
             <div className="feedback__main">
                 <h5 className="feedback__title font__h5">Добавить свой отзыв</h5>
-                <form onSubmit={e => handleOnSubmit(e)} className="feedback__form form" id="form">
+                <form onSubmit={e => handleOnSubmit(e)} className="feedback__form form">
                     <div className="feedback__inputs form__row">
                         <div className="feedback__input">
                             <input
@@ -94,19 +89,19 @@ function Feedback() {
                                 onChange={(e) => { handleOnChange('fullname', e.target.value) }}
                                 onFocus={() => handleOnFocus('fullname')}
                             />
-                            {isFullnameError && <div className="form__field-error">{fullnameErrorText}</div>}
+                            {fullnameError && <div className="form__field-error">{fullnameError}</div>}
                         </div>
                         <div className="feedback__input">
                             <input
                                 className="feedback__rating form__input form__field"
-                                type="number"
+                                type="text"
                                 name="rating"
                                 placeholder="Оценка"
                                 value={rating}
                                 onChange={(e) => { handleOnChange('rating', e.target.value) }}
                                 onFocus={() => handleOnFocus('rating')}
                             />
-                            {isRatingError && <div className="form__field-error">{ratingErrorText}</div>}
+                            {ratingError && <div className="form__field-error">{ratingError}</div>}
                         </div>    
                     </div>
                     <div className="feedback__input">
