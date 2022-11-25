@@ -1,5 +1,8 @@
+// React
 import { useState } from 'react';
+// Data
 import { product, reviews } from '../../data/data';
+// Components
 import Sidebar from '../sidebar/sidebar';
 import ComparisonChart from '../comparison-chart/comparisonChart';
 import Property from '../property/property';
