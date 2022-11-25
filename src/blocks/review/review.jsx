@@ -15,7 +15,7 @@ function Review(props) {
             <div className="review__main">
                 <div className="review__title">
                     <h4 className="review__name font__h4">{author.name}</h4>
-                    <Rating cn="review__rating" score={rating} />
+                    <Rating className="review__rating" score={rating} />
                 </div>
                 {/* Review details */}
                 <div className="review__details">

@@ -1,9 +1,11 @@
+import classNames from "classnames";
+
 function Rating(props) {
-    const { cn, score } = props;
+    const { className, score } = props;
     const arrScore = Array(5).fill(1).fill(0, score);
 
     return (
-        <div className={`${cn} rating`}>
+        <div className={classNames('rating', className)}>
             {arrScore.map((item, index) => {
                 return (
                     <div className="rating__img-wrapper" key={index}>
