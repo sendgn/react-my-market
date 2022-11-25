@@ -17,9 +17,9 @@ function Feedback() {
 
     // On render use local storage form fields values
     useEffect(() => {
-        setFullname(localStorage.getItem('fullname'));
-        setRating(localStorage.getItem('rating'));
-        setComment(localStorage.getItem('comment'));
+        setFullname(localStorage.getItem('fullname') || '');
+        setRating(localStorage.getItem('rating') || '');
+        setComment(localStorage.getItem('comment') || '');
     }, []);
 
     // Functions
@@ -83,7 +83,7 @@ function Feedback() {
         if (fieldname === 'rating') {
             setIsRatingError(false);
         }
-    } 
+    }
 
     return (
         <div className="feedback">
@@ -102,7 +102,9 @@ function Feedback() {
                                 onChange={(e) => { handleOnChange('fullname', e.target.value) }}
                                 onFocus={() => handleOnFocus('fullname')}
                             />
-                            <div className={cn('form__field-error', { hidden: !isFullnameError })}>{fullnameErrorText}</div>
+                            <div className={cn('form__field-error', { hidden: !isFullnameError })}>
+                                {fullnameErrorText}
+                            </div>
                         </div>
                         <div className="feedback__input">
                             <input
@@ -114,7 +116,9 @@ function Feedback() {
                                 onChange={(e) => { handleOnChange('rating', e.target.value) }}
                                 onFocus={() => handleOnFocus('rating')}
                             />
-                            <div className={cn('form__field-error', { hidden: !isRatingError })}>{ratingErrorText}</div>
+                            <div className={cn('form__field-error', { hidden: !isRatingError })}>
+                                {ratingErrorText}
+                            </div>
                         </div>    
                     </div>
                     <div className="feedback__input">
