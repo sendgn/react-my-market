@@ -1,26 +1,18 @@
-import { useEffect, useState } from "react";
-import cn from 'classnames';
+import { useState } from "react";
 
 function Feedback() {
     // Fullname
-    const [fullname, setFullname] = useState('');
+    const [fullname, setFullname] = useState(localStorage.getItem('fullname') || '');
     const [isFullnameError, setIsFullnameError] = useState(false);
     const [fullnameErrorText, setFullnameErrorText] = useState('');
 
     // Rating
-    const [rating, setRating] = useState('');
+    const [rating, setRating] = useState(localStorage.getItem('rating') || '');
     const [isRatingError, setIsRatingError] = useState(false);
     const [ratingErrorText, setRatingErrorText] = useState('');
 
     // Comment
-    const [comment, setComment] = useState('');
-
-    // On render use local storage form fields values
-    useEffect(() => {
-        setFullname(localStorage.getItem('fullname') || '');
-        setRating(localStorage.getItem('rating') || '');
-        setComment(localStorage.getItem('comment') || '');
-    }, []);
+    const [comment, setComment] = useState(localStorage.getItem('comment') || '');
 
     // Functions
     const resetForm = () => {
@@ -34,9 +26,9 @@ function Feedback() {
         setComment('');
 
         // Clear local Storage
-        localStorage.setItem('fullname', '');
-        localStorage.setItem('rating', '');
-        localStorage.setItem('comment', '');
+        localStorage.removeItem('fullname');
+        localStorage.removeItem('rating');
+        localStorage.removeItem('comment');
     }
 
     // Handlers
@@ -102,9 +94,7 @@ function Feedback() {
                                 onChange={(e) => { handleOnChange('fullname', e.target.value) }}
                                 onFocus={() => handleOnFocus('fullname')}
                             />
-                            <div className={cn('form__field-error', { hidden: !isFullnameError })}>
-                                {fullnameErrorText}
-                            </div>
+                            {isFullnameError && <div className="form__field-error">{fullnameErrorText}</div>}
                         </div>
                         <div className="feedback__input">
                             <input
@@ -116,9 +106,7 @@ function Feedback() {
                                 onChange={(e) => { handleOnChange('rating', e.target.value) }}
                                 onFocus={() => handleOnFocus('rating')}
                             />
-                            <div className={cn('form__field-error', { hidden: !isRatingError })}>
-                                {ratingErrorText}
-                            </div>
+                            {isRatingError && <div className="form__field-error">{ratingErrorText}</div>}
                         </div>    
                     </div>
                     <div className="feedback__input">
