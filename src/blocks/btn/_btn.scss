@@ -11,6 +11,9 @@
     cursor: pointer;
     user-select: none;
     white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
 
     &:hover {
         background: $color-main-dark;
