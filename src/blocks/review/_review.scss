@@ -1,0 +1,15 @@
+.review:not(:last-of-type) {
+    .review__main {
+        border-bottom: 1px dashed $color-gray-dark;
+        padding-bottom: 40px;
+    }
+}
+
+@import '__aside/review__aside';
+@import '__main/review__main';
+@import '__img/review__img';
+@import '__title/review__title';
+@import '__name/review__name';
+@import '__rating/review__rating';
+@import '__details/review__details';
+@import '__detail/review__detail';

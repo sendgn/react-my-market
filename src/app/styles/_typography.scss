@@ -1,0 +1,26 @@
+// Typography
+.font {
+    font-family: $font-family;
+    font-size: $font-size;
+
+    &__h1 {
+        font-size: 44px;
+        font-weight: 700;
+    }
+    &__h2 {
+        font-size: 32px;
+        font-weight: 700;
+    }
+    &__h3 {
+        font-size: 24px;
+        font-weight: 700;
+    }
+    &__h4 {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    &__h5 {
+        font-size: 16px;
+        font-weight: 700;
+    }
+}
