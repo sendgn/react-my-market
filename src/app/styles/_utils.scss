@@ -1,0 +1,27 @@
+// Utils
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+// Colors
+.colored {
+    color: $color-main;
+}
+
+// Margins
+.mt-after-header {
+    margin-top: calc($header-height + 20px);
+}
+.mb-md {
+    margin-bottom: 15px;
+}
+
+// height 100%
+.h-100 {
+    height: 100%;
+}
+
+.fill-unset {
+    fill: unset;
+}
