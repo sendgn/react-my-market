@@ -1,0 +1,9 @@
+.header__icon {
+    height: 32px;
+    width: auto;
+
+    @media screen and (max-width: $screen-phone) {
+        height: 21px;
+        width: 26px;        
+    }
+}
