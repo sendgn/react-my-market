@@ -1,0 +1,8 @@
+.property {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+@import '__heading/property__heading';
+@import '__body/property__body';

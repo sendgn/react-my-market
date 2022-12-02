@@ -1,0 +1,9 @@
+.reviews__item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 30px;
+
+    @media screen and (max-width: $screen-desktop) {
+        grid-template-columns: 100px 1fr;
+    }
+}
