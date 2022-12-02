@@ -21,6 +21,7 @@ export const breadcrumbsItems = [
 
 // Product
 export const product = {
+    id: 5830,
     name: 'Смартфон Apple iPhone 13',
     colorPicked: 'синий',
     ramPicked: '128Гб',
