@@ -19,11 +19,8 @@ function Card() {
 
     const handleCartToggle = () => {
         dispatch(addProduct(product));
-        localStorage.setItem(product.id, product.name);
-
         if (cartCounter !== 0) {
             dispatch(removeProduct(product));
-            localStorage.removeItem(product.id);
         }
     }
 

@@ -4,7 +4,7 @@ export const cartSlice = createSlice({
     name: 'cart',
     // Начальное состояние хранилища, товаров нет
     initialState: {
-        products: [],
+        products: JSON.parse(localStorage.getItem('cart-products')) || [],
     },
     // Все доступные методы
     reducers: {
@@ -17,8 +17,8 @@ export const cartSlice = createSlice({
             );
 
             if (hasInCart) return prevState;
-
-            return {
+            
+            const newState = {
                 ...prevState,
                 // Внутри action.payload информация о добавленном товаре
                 // Возвращаем новый массив товаров вместе с добавленным
@@ -27,9 +27,16 @@ export const cartSlice = createSlice({
                     action.payload,
                 ],
             };
+
+            const data = JSON.stringify(newState.products);
+            localStorage.setItem('cart-products', data);
+
+            return newState;
         },
         removeProduct: (prevState, action) => {
             const product = action.payload;
+
+            localStorage.removeItem('cart-products');
 
             return {
                 products: prevState.products.filter(
