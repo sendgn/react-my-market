@@ -1,10 +1,15 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PageProduct from '../pages/page-product/page-product';
+import PageIndex from '../pages/page-index/page-index';
 
 function App() {
     return (
-        <div className="font">
-            <PageProduct />
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<PageIndex />}></Route>
+                <Route path='/product' element={<PageProduct />}></Route>
+            </Routes>
+        </BrowserRouter>
     );
 }
 

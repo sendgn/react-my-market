@@ -4,4 +4,8 @@
     align-items: center;
     gap: 28px;
     right: 12px;
+
+    @media screen and (max-width: $screen-phone) {
+        gap: 15px;
+    }
 }

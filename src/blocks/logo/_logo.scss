@@ -1,0 +1,7 @@
+.logo {
+    height: 43px;
+
+    @media screen and (max-width: $screen-phone) {
+        height: 30px;
+    }
+}

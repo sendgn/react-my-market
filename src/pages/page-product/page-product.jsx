@@ -10,7 +10,7 @@ function PageProduct() {
 
     return (
         <>
-            <Header id="top"/>
+            <Header id="top" />
             <Breadcrumbs items={breadcrumbsItems} />
             <Product />
             <Footer />
