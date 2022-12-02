@@ -1,6 +1,8 @@
+import styles from './badge.module.css';
+
 function Badge(props) {
     return (
-        <span className="badge">{ props.value }</span>
+        <span className={styles.badge}>{ props.value }</span>
     );
 }
 
