@@ -1,0 +1,17 @@
+.icon {
+    position: relative;
+    fill: $color-gray-dark;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        fill: $color-main;
+    }
+
+    &:active {
+        fill: $color-main-darkest;
+    }
+}
+
+@import '__counter/icon__counter';
+@import '_filled/icon_filled';

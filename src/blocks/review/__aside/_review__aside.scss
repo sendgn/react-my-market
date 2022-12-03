@@ -1,0 +1,5 @@
+.review__aside {
+    @media screen and (max-width: $screen-phone) {
+        display: none;
+    }
+}

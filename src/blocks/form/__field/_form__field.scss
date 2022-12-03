@@ -1,0 +1,26 @@
+.form__field {
+    font-family: 'Inter', sans-serif;
+    font-size: $font-size;
+    font-weight: 500;
+    padding: 15px 20px;
+    width: 100%;
+    border: 1px solid $color-gray-dark;
+    border-radius: 0;
+
+    @media screen and (max-width: $screen-desktop) {
+        padding: 10px 15px;
+        font-size: $font-size-md;
+    }
+
+    &:focus {
+        outline: none;
+        border: 1px solid $color-black;
+        border-radius: 0;
+    }
+
+    &::placeholder {
+        color: $color-gray-dark;
+    }
+}
+
+@import '_invalid/form__field_invalid';

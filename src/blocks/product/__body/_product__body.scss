@@ -1,0 +1,14 @@
+.product__body {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    font-weight: 500;
+
+    @media screen and (max-width: $screen-desktop) {
+        gap: 40px;
+    }
+
+    @media screen and (max-width: $screen-phone) {
+        flex-direction: column-reverse;
+    }
+}

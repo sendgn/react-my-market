@@ -1,0 +1,7 @@
+.product__img {
+    height: 387px;
+    
+    @media screen and (max-width: $screen-phone) {
+        height: 272px;
+    }
+}
