@@ -1,7 +1,9 @@
+import cn from 'classnames';
+
 function Property(props) {
-    const { title, picked, children } = props;
+    const { title, picked, children, className } = props;
     return (
-        <div className="property">
+        <div className={cn('property', className)}>
             <h5 className="property__heading font__h5">
                 {title} {picked && <span className="property__value">{picked}</span>}
             </h5>

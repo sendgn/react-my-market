@@ -3,6 +3,10 @@
     background: $color-white;
     color: $color-black;
 
+    @media screen and (max-width: $screen-phone) {
+        font-weight: 500;
+    }
+
     &:hover {
         background: $color-gray-light;
     }

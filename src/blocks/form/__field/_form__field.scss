@@ -1,11 +1,16 @@
 .form__field {
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: $font-size;
     font-weight: 500;
     padding: 15px 20px;
     width: 100%;
     border: 1px solid $color-gray-dark;
     border-radius: 0;
+
+    @media screen and (max-width: $screen-desktop) {
+        padding: 10px 15px;
+        font-size: $font-size-md;
+    }
 
     &:focus {
         outline: none;

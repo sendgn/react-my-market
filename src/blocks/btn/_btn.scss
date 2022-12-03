@@ -15,6 +15,10 @@
     font-size: $font-size;
     font-weight: $font-weight;
 
+    @media screen and (max-width: $screen-desktop) {
+        font-size: $font-size-md;
+    }
+
     &:hover {
         background: $color-main-dark;
     }
@@ -27,5 +31,6 @@
 @import '_lg/btn_lg';
 @import '_border/btn_border';
 @import '_img/btn_img';
+@import '__img/btn__img';
 @import '_inactive/btn_inactive';
 @import '__text/btn__text';

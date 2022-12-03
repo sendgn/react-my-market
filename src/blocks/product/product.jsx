@@ -29,7 +29,7 @@ function Product() {
     }
 
     return (
-        <main className="product container">
+        <main className="product container font">
             {/* Product header */}
             <div className="product__header">
                 {/* Product name */}
@@ -38,9 +38,7 @@ function Product() {
                 <div className="product__gallery">
                     {product.gallery.map(image => {
                         return (
-                            <div className="product__img-wrapper" key={image.src}>
-                                <img className="product__img" src={image.src} alt={image.alt} />
-                            </div>
+                            <img className="product__img" src={image.src} alt={image.alt} key={image.src} />
                         );
                     })}
                 </div>
@@ -70,7 +68,7 @@ function Product() {
                                             onClick={() => handleColorBtnClick(index, item.text)}
                                             key={item.src}
                                         >
-                                            <img src={item.src} alt={item.alt} />
+                                            <img className="btn__img" src={item.src} alt={item.alt} />
                                         </Btn>
                                     );
                                 })}
@@ -124,7 +122,7 @@ function Product() {
                             </Property>
                             {/* Model comparison chart */}
                             <Property
-                                className="product__property"
+                                className="product__property product__property_comparison"
                                 title={properties.comparison.title}
                             >
                                 <ComparisonChart table={properties.comparison.table} />

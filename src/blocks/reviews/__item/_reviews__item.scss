@@ -6,4 +6,8 @@
     @media screen and (max-width: $screen-desktop) {
         grid-template-columns: 100px 1fr;
     }
+
+    @media screen and (max-width: $screen-phone) {
+        grid-template-columns: 1fr;
+    }
 }

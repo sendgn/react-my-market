@@ -13,6 +13,13 @@ function Review(props) {
             </div>
             {/* Review main */}
             <div className="review__main">
+                <div className="review__mobile-header">
+                    <img className="review__img review__img_mobile" src={author.img} alt={author.alt} />
+                    <div className="review__mobile-title">
+                        <h4 className="review__name font__h4">{author.name}</h4>
+                        <Rating className="review__rating" score={rating} />
+                    </div>
+                </div>
                 <div className="review__title">
                     <h4 className="review__name font__h4">{author.name}</h4>
                     <Rating className="review__rating" score={rating} />
