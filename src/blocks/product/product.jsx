@@ -1,5 +1,8 @@
+// React
 import { useState } from 'react';
+// Data
 import { product, reviews } from '../../data/data';
+// Components
 import Sidebar from '../sidebar/sidebar';
 import ComparisonChart from '../comparison-chart/comparisonChart';
 import Property from '../property/property';
@@ -11,7 +14,19 @@ import Btn from '../btn/btn';
 function Product() {
     const { properties, properties: { description } } = product;
     let [selectedRamBtn, setSelectedRamBtn] = useState(0);
-    let [selectedColorBtn, setSelectedColorBtn] = useState(2);
+    let [selectedRamText, setSelectedRamText] = useState('128 Гб');
+    let [selectedColorBtn, setSelectedColorBtn] = useState(3);
+    let [selectedColorText, setSelectedColorText] = useState('синий')
+
+    const handleColorBtnClick = (index, text) => {
+        setSelectedColorBtn(index);
+        setSelectedColorText(text);
+    }
+
+    const handleRamBtnClick = (index, text) => {
+        setSelectedRamBtn(index);
+        setSelectedRamText(text);
+    }
 
     return (
         <main className="product container">
@@ -42,7 +57,7 @@ function Product() {
                             <Property
                                 className="product__property"
                                 title={properties.color.title}
-                                picked={product.colorPicked}
+                                picked={selectedColorText}
                             >
                                 {properties.color.items.map((item, index) => {
                                     return (
@@ -52,7 +67,7 @@ function Product() {
                                                 hasImage: true,
                                                 selected: index === selectedColorBtn
                                             }}
-                                            onClick={() => setSelectedColorBtn(index)}
+                                            onClick={() => handleColorBtnClick(index, item.text)}
                                             key={item.src}
                                         >
                                             <img src={item.src} alt={item.alt} />
@@ -64,7 +79,7 @@ function Product() {
                             <Property
                                 className="product__property"
                                 title={properties.ram.title}
-                                picked={product.ramPicked}
+                                picked={selectedRamText}
                             >
                                 {properties.ram.items.map((item, index) => {
                                     return (
@@ -73,7 +88,7 @@ function Product() {
                                                 border: true,
                                                 selected: index === selectedRamBtn
                                             }}
-                                            onClick={() => setSelectedRamBtn(index)}
+                                            onClick={() => handleRamBtnClick(index, item)}
                                             key={item}
                                         >
                                             {item}

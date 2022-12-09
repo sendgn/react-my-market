@@ -12,8 +12,13 @@ $color-secondary: #008CF0;
 $screen-desktop: 1499px;
 $screen-big-tablet: 1024px;
 
-// Font size
+// Font
+$font-family: 'Inter', sans-serif;
+$font-size: 16px;
 $font-size-sm: 12px;
+$font-weight: 400;
+$font-weight-md: 500;
+$font-weight-lg: 700;
 
 // Header height
 $header-height: 80px;

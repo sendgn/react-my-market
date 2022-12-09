@@ -53,26 +53,32 @@ export const product = {
                 {
                     src: '/img/color-1.png',
                     alt: 'Красный iPhone 13',
+                    text: 'красный',
                 },
                 {
                     src: '/img/color-2.png',
                     alt: 'Зеленый iPhone 13',
+                    text: 'зеленый',
                 },
                 {
                     src: '/img/color-3.png',
                     alt: 'Розовый iPhone 13',
+                    text: 'розовый',
                 },
                 {
                     src: '/img/color-4.png',
-                    alt: 'Бирюзовый iPhone 13',
+                    alt: 'Синий iPhone 13',
+                    text: 'синий',
                 },
                 {
                     src: '/img/color-5.png',
-                    alt: 'Синий iPhone 13',
+                    alt: 'Белый iPhone 13',
+                    text: 'белый',
                 },
                 {
                     src: '/img/color-6.png',
                     alt: 'Черный iPhone 13',
+                    text: 'черный',
                 },
             ],
         },

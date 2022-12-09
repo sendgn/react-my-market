@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import cn from "classnames";
 
 function Btn(props) {
     const { className, id, config, children, onClick } = props;
@@ -6,7 +6,7 @@ function Btn(props) {
     return (
         <div
             id={id}
-            className={classNames('btn', {
+            className={cn('btn', {
                 [className]: className || '',
                 btn_border: config?.border,
                 btn_img: config?.hasImage,
