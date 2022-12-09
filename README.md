@@ -1,9 +1,8 @@
 ## My Market app
 
-```bash
 React.js app
 Two pages of online hardware store (main and product pages)
-```
+
 
 ## Build Setup:
 
