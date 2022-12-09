@@ -1,4 +1,9 @@
 .btn_img {
     width: 80px;
     height: 80px;
+
+    @media screen and (max-width: $screen-phone) {
+        width: 60px;
+        height: 60px;
+    }
 }

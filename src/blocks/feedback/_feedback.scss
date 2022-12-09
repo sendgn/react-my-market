@@ -2,10 +2,8 @@
     display: grid;
     grid-template-columns: 140px 1fr;
     gap: 30px;
-}
 
-@media screen and (max-width: $screen-desktop) {
-    .feedback {
+    @media screen and (max-width: $screen-desktop) {
         grid-template-columns: 0 1fr;
         gap: 0;
     }
@@ -16,3 +14,4 @@
 @import '__inputs/feedback__inputs';
 @import '__input/feedback__input';
 @import '__textarea/feedback__textarea';
+@import '__title/feedback__title';

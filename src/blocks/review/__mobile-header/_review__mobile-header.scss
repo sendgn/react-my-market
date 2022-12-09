@@ -1,0 +1,9 @@
+.review__mobile-header {
+    display: none;
+
+    @media screen and (max-width: $screen-phone) {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+}

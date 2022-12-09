@@ -1,3 +1,7 @@
 .feedback__form {
     align-items: flex-start;
+
+    @media screen and (max-width: $screen-phone) {
+        gap: 15px;
+    }
 }

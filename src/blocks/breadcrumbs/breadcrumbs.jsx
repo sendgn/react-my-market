@@ -1,3 +1,5 @@
+import Link from '../link/link';
+
 function Breadcrumbs(props) {
     const { items } = props;
 
@@ -6,7 +8,7 @@ function Breadcrumbs(props) {
             {items.map(item => {
                 return (
                     <div className="breadcrumbs__item" key={item.url}>
-                        <a className="link link_breadcrumbs" href={item.url}>{item.name}</a>
+                        <Link className="link_breadcrumbs" href={item.url}>{item.name}</Link>
                     </div>
                 );
             })}

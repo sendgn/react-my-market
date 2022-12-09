@@ -2,6 +2,10 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    
+    @media screen and (max-width: $screen-phone) {
+        gap: 30px;
+    }
 }
 
 @import '_direction/reviews__items_direction';

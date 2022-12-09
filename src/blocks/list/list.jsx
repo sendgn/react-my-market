@@ -1,3 +1,5 @@
+import Link from '../link/link';
+
 function List(props) {
     const { items } = props;
     return (
@@ -10,15 +12,14 @@ function List(props) {
                             {item.elements.map((el, i) => {
                                 return (
                                     el.isLink ? 
-                                        <a
-                                            className="link"
+                                        <Link
                                             href="https://ru.wikipedia.org/wiki/Apple_A15"
                                             rel="noreferrer noopener"
                                             target="_blank"
                                             key={`link-${el.value}`}
                                         >
                                             <b>{el.value}</b>
-                                        </a> :
+                                        </Link> :
                                         <b key={el.value}>
                                             {el.value}{i === item.elements.length - 1 ? '' : ', '}
                                         </b>

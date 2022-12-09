@@ -7,6 +7,10 @@
     border-bottom: 1px solid $color-gray-light;
     background: $color-gray-lightest;
     z-index: 1000;
+    
+    @media screen and (max-width: $screen-phone) {
+        height: 60px;
+    }
 }
 
 @import '__container/header__container';

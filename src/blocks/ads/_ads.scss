@@ -5,6 +5,10 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    @media screen and (max-width: $screen-phone) {
+        display: none;
+    }
 }
 
 @import '__title/ads__title';

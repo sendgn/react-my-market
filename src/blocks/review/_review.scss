@@ -2,6 +2,10 @@
     .review__main {
         border-bottom: 1px dashed $color-gray-dark;
         padding-bottom: 40px;
+
+        @media screen and (max-width: $screen-phone) {
+            padding-bottom: 30px;
+        }
     }
 }
 
@@ -13,3 +17,5 @@
 @import '__rating/review__rating';
 @import '__details/review__details';
 @import '__detail/review__detail';
+@import '__mobile-header/review__mobile-header';
+@import '__mobile-title/review__mobile-title';

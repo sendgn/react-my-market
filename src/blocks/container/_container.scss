@@ -2,11 +2,14 @@
     max-width: calc($screen-desktop + 1px);
     margin: 0 auto;
     padding: 0 $gutter-lg;
-}
 
-@media screen and (max-width: $screen-desktop) {
-    .container {
-        padding: 0 $gutter-sm;
+    @media screen and (max-width: $screen-desktop) {
+        padding: 0 $gutter-md;
         max-width: $screen-big-tablet;
     }
+
+    @media screen and (max-width: $screen-phone) {
+        padding: 0 $gutter-sm;
+    }
 }
+
