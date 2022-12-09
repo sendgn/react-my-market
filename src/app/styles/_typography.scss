@@ -6,6 +6,9 @@
     &__h1 {
         font-size: 44px;
         font-weight: 700;
+        @media screen and (max-width: $screen-phone) {
+            font-size: 32px;
+        }
     }
     &__h2 {
         font-size: 32px;
