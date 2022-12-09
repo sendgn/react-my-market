@@ -1,8 +1,5 @@
-## My Market app
-
-React.js app
+## MyMarket react app
 Two pages of online hardware store (main and product pages)
-
 
 ## Build Setup:
 
