@@ -1,8 +1,16 @@
 import logo from './logo.svg';
+import styled from 'styled-components';
+
+const Img = styled.img`
+    height: 43px;
+    @media (max-width: 361px) {
+        height: 30px;
+    }
+`;
 
 function Logo() {
     return (
-        <img className="logo" src={logo} alt="Логотип" />
+        <Img src={logo} alt="Логотип" />
     );
 }
 
