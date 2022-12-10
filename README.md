@@ -1,5 +1,5 @@
 ## MyMarket react app
-Two pages of online hardware store (main and product pages)
+A piece of online store (home and product pages)
 
 ## Build Setup:
 
