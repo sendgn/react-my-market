@@ -1,5 +1,8 @@
-## MyMarket react app
+# MyMarket react app
 A piece of online store (home and product pages)
+
+## Deployed app
+[https://mytechmarket.netlify.app](https://mytechmarket.netlify.app)
 
 ## Build Setup:
 
